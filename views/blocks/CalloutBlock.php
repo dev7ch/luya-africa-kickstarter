@@ -11,14 +11,20 @@
  *
  * @var $this \luya\cms\base\PhpBlockView
  */
+
+$bgImage = $this->extraValue('bgImage') ? $this->extraValue('bgImage')->source : '';
+$title = $this->varValue('title');
+$text = $this->varValue('text');
 ?>
 
-<div class="callout-image py-5" style="background-image: url('<?= $this->publicHtml . '/images/callout.jpg' ?>');">
-    <div class="container">
-        <div class="callout-content bg-info p-3">
-            <h1>Callout Title</h1>
-            <p>Callout</p>
+<? if (!empty($title || $text)): ?>
+    <div class="callout-image py-5" style="background-image: url('<?= $bgImage ?>')">
+        <div class="container">
+            <div class="callout-content bg-info p-3">
+                <h1><?= $title ?></h1>
+                <p><?= $text ?></p>
+            </div>
         </div>
     </div>
-</div>
+<? endif; ?>
 

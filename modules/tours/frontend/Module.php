@@ -9,5 +9,9 @@ namespace app\modules\tours\frontend;
  */
 class Module extends \luya\base\Module
 {
+    public $useAppViewPath = true;
 
+    public $urlRules = [
+        ['pattern' => 'tours', 'route' => 'toursfrontend/default/index']
+    ];
 }
