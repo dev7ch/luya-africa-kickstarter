@@ -113,7 +113,7 @@ $config = [
 
         'assetManager' => [
             'class' => 'luya\web\AssetManager',
-            'linkAssets' => true,
+            'linkAssets' => false,
         ],
     ],
 ];
