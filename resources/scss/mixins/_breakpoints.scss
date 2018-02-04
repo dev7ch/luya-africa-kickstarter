@@ -1,0 +1,31 @@
+@mixin screen-min($grid-breakpoint) {
+
+    $value: map-get($grid-breakpoints, $grid-breakpoint);
+
+    @if $value != null {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin screen-max($grid-breakpoint) {
+
+    $value: map-get($grid-breakpoints, $grid-breakpoint);
+
+    @if $value != null {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}

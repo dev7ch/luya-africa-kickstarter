@@ -2,13 +2,18 @@
 @import "../../vendor/twbs/bootstrap/scss/bootstrap";
 
 
-// Override bootstrap var in resource
+// Vars
 @import "base/vars";
+@import "base/colors";
 
+// Mixins
 
-// Project
+@import "mixins/breakpoints";
+
+// Components
 
 @import "components/callout";
+@import "components/carousel";
 @import "components/content";
 @import "components/footer";
 @import "components/intro";

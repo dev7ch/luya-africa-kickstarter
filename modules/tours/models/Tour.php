@@ -104,4 +104,10 @@ class Tour extends NgRestModel
             ['delete', true],
         ];
     }
+
+    public function getImage() {
+
+
+        return $image;
+    }
 }

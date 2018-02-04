@@ -16,9 +16,9 @@ class Module extends \luya\admin\base\Module
     public function getMenu()
     {
         return (new \luya\admin\components\AdminMenuBuilder($this))
-            ->node('Tours', 'beach_access')
+            ->node('Tours', 'card_travel')
             ->group('Group')
-            ->itemApi('Tours', 'toursadmin/tour/index', 'card_travel', 'api-tours-tour');
+            ->itemApi('Tours', 'toursadmin/tour/index', 'beach_access', 'api-tours-tour');
     }
 
 }

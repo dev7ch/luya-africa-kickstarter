@@ -10,8 +10,8 @@
 ?>
 
 <div class="carousel-wrapper">
-    <div class="carousel">
-        <div class="card" style="width: 20rem;">
+    <div class="carousel card-deck">
+        <div class="card">
             <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -19,7 +19,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card" style="width: 20rem;">
+        <div class="card">
             <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -27,7 +27,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card" style="width: 20rem;">
+        <div class="card">
             <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -35,7 +35,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card" style="width: 20rem;">
+        <div class="card">
             <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -48,7 +48,10 @@
                                   selector: \'.carousel\',
                                   duration: 200,
                                   easing: \'ease-out\',
-                                  perPage: 3,
+                                  perPage:{                         
+                                    400: 2,
+                                    880: 3
+                                   },
                                   startIndex: 0,
                                   draggable: true,
                                   multipleDrag: true,

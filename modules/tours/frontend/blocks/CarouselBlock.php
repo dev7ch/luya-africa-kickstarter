@@ -73,8 +73,7 @@ class CarouselBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Carousel Block</h5>' .
-            '<table class="table table-bordered">' .
-            '</table>';
+        return '<h5 class="mb-3">Tours Carousel Block</h5>' .
+            '<p>See the <i class="material-icons">card_travel</i> Tours Module for configuration</p>';
     }
 }
