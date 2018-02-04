@@ -5,6 +5,7 @@ namespace app\modules\tours\frontend\blocks;
 use luya\cms\base\PhpBlock;
 use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
+use app\modules\tours\models\Tour;
 
 /**
  * Carousel Block.
@@ -18,6 +19,7 @@ class CarouselBlock extends PhpBlock
      */
     public $module = 'toursfrontend';
 
+
     /**
      * @var boolean Choose whether block is a layout/container/segmnet/section block or not, Container elements will be optically displayed
      * in a different way for a better user experience. Container block will not display isDirty colorizing.
@@ -25,7 +27,7 @@ class CarouselBlock extends PhpBlock
     public $isContainer = false;
 
     /**
-     * @var bool Choose whether a block can be cached trough the caching component. Be carefull with caching container blocks.
+     * @var bool Choose whether a block can be cached trough the caching component. Be careful with caching container blocks.
      */
     public $cacheEnabled = false;
     
@@ -55,9 +57,9 @@ class CarouselBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'beach_access'; // see the list of icons on: https://design.google.com/icons/
     }
- 
+
     /**
      * @inheritDoc
      */
@@ -66,7 +68,24 @@ class CarouselBlock extends PhpBlock
         return [
         ];
     }
-    
+
+    /**
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    private function getModel() {
+
+        $model = Tour::find()->where(['is_published' => '1'])->all();
+
+        return $model;
+    }
+
+    public function extraVars()
+    {
+        return [
+            'model' => $this->getModel()
+        ];
+    }
+
     /**
      * {@inheritDoc} 
      *

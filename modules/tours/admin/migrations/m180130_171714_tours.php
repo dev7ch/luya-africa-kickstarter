@@ -17,7 +17,7 @@ class m180130_171714_tours extends Migration
             'title' => $this->string()->notNull(),
             'text' => $this->text(),
             'image' => $this->string(),
-            'link' => $this->string(),
+            'link' => $this->text(),
             'position_index' => $this->string()->null(),
             'is_published' => $this->integer(),
 

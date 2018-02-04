@@ -7,42 +7,28 @@
 *
 * @var $this \luya\cms\base\PhpBlockView
 */
+
+
+$tour = $this->context->getExtraValue('model');
 ?>
 
 <div class="carousel-wrapper">
     <div class="carousel card-deck">
-        <div class="card">
-            <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <? foreach ($tour as $item):
+            $image = $item->image ? Yii::$app->storage->getImage($item->image)->applyFilter('medium-thumbnail')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+            $link = $item->link ? $item->link->link : '#';
+
+            ?>
+            <div class="card">
+                <img class="card-img-top" src="<?= $image ?>" alt="<?= $item->title ?>">
+                <div class="card-body">
+
+                    <h5 class="card-title"><?= $item->title ?></h5>
+                    <p class="card-text"><?= $item->text ?></p>
+                    <a href="<?= $link ?>" class="btn btn-primary">More</a>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+        <? endforeach; ?>
         <?= $this->appView->registerJs(
             'new Siema({
                                   selector: \'.carousel\',

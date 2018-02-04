@@ -12,7 +12,7 @@ use luya\admin\ngrest\base\NgRestModel;
  *
  * @property integer $id
  * @property string $title
- * @property text $text
+ * @property string $text
  * @property string $image
  * @property string $link
  * @property string $position_index
