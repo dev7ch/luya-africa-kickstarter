@@ -75,7 +75,6 @@ class CarouselBlock extends PhpBlock
     private function getModel() {
 
         $model = Tour::find()->where(['is_published' => '1'])->all();
-
         return $model;
     }
 

@@ -20,7 +20,7 @@ $tour = $this->context->getExtraValue('model');
 
             ?>
             <div class="card">
-                <img class="card-img-top" src="<?= $image ?>" alt="<?= $item->title ?>">
+                <img class="card-img-top" src="<?= $image ?>" alt="<?= str_replace(' ', '-', strtolower($item->title)); ?>">
                 <div class="card-body">
 
                     <h5 class="card-title"><?= $item->title ?></h5>

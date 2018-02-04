@@ -34,12 +34,12 @@ $this->beginPage();
     <div class="nav-container bg-light m-b-3">
         <div class="container px-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar w/ text</a>
+                <a class="navbar-brand" href="<?= $this->publicHtml ?>">Jabbula</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainnav">
-                    <ul class="nav navbar-nav mr-auto">
+                    <ul class="nav navbar-nav ml-auto">
                         <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
                             <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
                                 <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
@@ -48,17 +48,19 @@ $this->beginPage();
                     </ul>
                 </div>
             </nav>
+            <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
+            <nav class="breadcrumbs mb-3 small" aria-label="breadcrumb">
+                <ol class="breadcrumb  bg-transparent">
+                    <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                        <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
+                            <a href="<?= $item->link; ?>"<?= $item->link == Yii::$app->menu->current ? ' class="disabled text-muted" style="pointer-events: none;text-decoration: underline;" data-role="disabled"' : ''; ?>><?= $item->title; ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </nav>
+            <? endif; ?>
         </div>
     </div>
-    <!-- <nav class="breadcrumbs mb-3" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                <li class="breadcrumb-item<?= $item->isActive ? ' active' : ''; ?>">
-                    <a href="<?= $item->link; ?>"><?= $item->title; ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ol>
-    </nav> -->
 
     <?= $content; ?>
 
