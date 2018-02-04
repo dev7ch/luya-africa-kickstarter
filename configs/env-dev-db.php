@@ -1,5 +1,5 @@
 <?php
-$config = includeIfExists('/home/devch/private/africa.cfg.php'); // store your db login in a secure, not public location on your server.
+$config = include('/home/devch/private/africa.cfg.php'); // store your db login in a secure, not public location on your server.
 
 return [
     'components' => [
