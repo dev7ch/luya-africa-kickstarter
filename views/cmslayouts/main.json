@@ -1,7 +1,9 @@
 {
 	"rows" : [
 	    [
+			{"cols": 12, "var": "intro", "label": "Intro Container"},
 	        {"cols": 12, "var": "content", "label": "Main Container"}
+	        {"cols": 12, "var": "callout", "label": "Callout Container"}
 	    ]
 	]
 }

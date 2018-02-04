@@ -1,0 +1,15 @@
+// Load bootstrap from vendor
+@import "../../vendor/twbs/bootstrap/scss/bootstrap";
+
+
+// Override bootstrap var in resource
+@import "base/vars";
+
+
+// Project
+
+@import "components/callout";
+@import "components/content";
+@import "components/footer";
+@import "components/intro";
+@import "components/slider";

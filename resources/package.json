@@ -1,0 +1,29 @@
+{
+  "name": "africa-kickstarter",
+  "version": "1.0.0",
+  "description": "Luya bootstrap4 kickstarter for travel website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev7ch/luya-africa-kickstarter.git"
+  },
+  "keywords": [
+    "luya",
+    "yii2",
+    "bootstrap4",
+    "php"
+  ],
+  "author": "Silvan Hahn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dev7ch/luya-africa-kickstarter/issues"
+  },
+  "homepage": "https://github.com/dev7ch/luya-africa-kickstarter#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "zephir-gulp-workflow": "^2.0.1"
+  }
+}

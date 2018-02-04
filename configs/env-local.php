@@ -60,6 +60,11 @@ $config = [
             'hiddenBlocks' => [],
             'blockVariations' => [],
         ],
+        'toursfrontend' => [
+            'class' => 'app\modules\tours\frontend\Module',
+            'useAppViewPath' => true, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
+        ],
+        'toursadmin' => 'app\modules\tours\admin\Module',
     ],
     'components' => [
         /*
@@ -103,6 +108,11 @@ $config = [
                     'class' => 'yii\i18n\PhpMessageSource',
                 ],
             ],
+        ],
+
+        'assetManager' => [
+            'class' => 'luya\web\AssetManager',
+            'linkAssets' => true,
         ],
     ],
 ];

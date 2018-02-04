@@ -1,5 +1,16 @@
-<div class="row">
-    <div class="col-md-12">
-    	<?= $placeholders['content']; ?>
+<? if (!empty($placeholders['intro'])): ?>
+    <section class="intro p-0">
+        <?= $placeholders['intro']; ?>
+    </section>
+<? endif; ?>
+<section class="content">
+    <div class="container">
+        <?= $placeholders['content']; ?>
     </div>
-</div>
+</section>
+<? if (!empty($placeholders['callout'])): ?>
+    <section class="callout p-0">
+        <?= $placeholders['callout']; ?>
+    </section>
+<? endif; ?>
+

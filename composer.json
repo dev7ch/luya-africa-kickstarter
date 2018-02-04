@@ -8,12 +8,14 @@
         "luyadev/luya-module-admin" : "~1.0.0",
         "luyadev/luya-module-cms" : "~1.0.0",
         "luyadev/luya-bootstrap3" : "~1.0.0",
-        "luyadev/luya-generic" : "~1.0.0"
+        "luyadev/luya-generic" : "~1.0.0",
+        "twbs/bootstrap": "4.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-gii" : "~2.0.0",
         "yiisoft/yii2-debug" : "~2.0.0",
-        "luyadev/luya-testsuite" : "~1.0.0"
+        "luyadev/luya-testsuite" : "~1.0.0",
+        "luyadev/luya-deployer": "~1.0.0"
     },
     "scripts": {
         "post-create-project-cmd": [
@@ -30,9 +32,6 @@
                 }
             ]
 		},
-        "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
-        },
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }

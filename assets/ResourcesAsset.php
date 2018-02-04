@@ -7,17 +7,17 @@ namespace app\assets;
  */
 class ResourcesAsset extends \luya\web\Asset
 {
-    public $sourcePath = '@app/resources';
+    public $sourcePath = '@app/resources/dist';
     
     public $css = [
         '//fonts.googleapis.com/css?family=Roboto:100,300,400',
         '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        'css/style.css'
+        YII_ENV . '/css/main.css'
     ];
 
     public $js = [
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+        '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
+        YII_ENV . '/js/main.min.js'
     ];
     
     public $publishOptions = [
@@ -26,7 +26,6 @@ class ResourcesAsset extends \luya\web\Asset
             'js/*',
         ]
     ];
-
 
     public $depends = [
         'yii\web\JqueryAsset',

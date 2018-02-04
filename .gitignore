@@ -5,6 +5,7 @@
 /luya
 composer.phar
 .DS_Store
+deploy.php
 
 # project config
 /configs/env-local-db.php
@@ -13,6 +14,7 @@ composer.phar
 # SASS & GULP
 /resources/.sass-cache
 /resources/local/
+/resources/node_modules/
 
 #IDE: netbeans
 /nbproject
