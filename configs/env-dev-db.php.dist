@@ -1,5 +1,5 @@
 <?php
-$config = parse_ini_file('<your-server-private-root>/private/africa.ini'); // store your db login in a secure, not public location on your server.
+$config = include('<-your-private-host-location->/africa.cfg.php'); // store your db login as a php array in a secure, not public location on your server.
 
 return [
     'components' => [
