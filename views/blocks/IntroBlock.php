@@ -59,6 +59,6 @@ $slides = $this->extraValue('slides');
 </div>
 <div class="container">
     <div class="intro-text py-5">
-        <?= $this->varValue('text'); ?>
+        <?= $this->extraValue('text'); ?>
     </div>
 </div>

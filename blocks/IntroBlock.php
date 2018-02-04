@@ -79,7 +79,7 @@ class IntroBlock extends PhpBlock
                 'title' => isset($slide['title']) ? $slide['title'] : '',
                 'image' => isset($slide['image']) ? BlockHelper::imageUpload($slide['image'], 'large-thumbnail', true) : null,
                 'alt' => isset($slide['alt']) ? $slide['alt'] : 'no-alt-text',
-                'text' => isset($slide['text']) ? $slide['text'] : '',
+                'text' => isset($slide['text']) ? BlockHelper::markdown($slide['text']) : '',
                 'link' => isset($slide['link']) ? BlockHelper::linkObject($slide['link']) : '',
             ];
         }
@@ -95,6 +95,7 @@ class IntroBlock extends PhpBlock
         return [
             'bgImage' => BlockHelper::imageUpload($this->getVarValue('bgImage'), false, true),
             'slides' => $this->getSlides(),
+            'text' => BlockHelper::markdown($this->getVarValue('text')),
         ];
     }
 
