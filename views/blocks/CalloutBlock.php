@@ -13,7 +13,7 @@
  */
 ?>
 
-<div class="callout-image py-5" style="background-image: url('<?= $this->publicHtml . '/images/callout.png' ?>');">
+<div class="callout-image py-5" style="background-image: url('<?= $this->publicHtml . '/images/callout.jpg' ?>');">
     <div class="container">
         <div class="callout-content bg-info p-3">
             <h1>Callout Title</h1>
