@@ -1,5 +1,5 @@
 <?php
-$config = parse_ini_file('/home/devch/private/africa.ini'); // store your db login in a secure, not public location on your server.
+$config = includeIfExists('/home/devch/private/africa.cfg.php'); // store your db login in a secure, not public location on your server.
 
 return [
     'components' => [
