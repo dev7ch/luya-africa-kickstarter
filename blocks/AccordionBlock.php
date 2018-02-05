@@ -7,16 +7,22 @@ use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
 
 /**
- * Callout Block.
+ * Accordion Block.
  *
  * File has been created with `block/create` command. 
  */
-class CalloutBlock extends PhpBlock
+class AccordionBlock extends PhpBlock
 {
+    /**
+     * @var boolean Choose whether block is a layout/container/segmnet/section block or not, Container elements will be optically displayed
+     * in a different way for a better user experience. Container block will not display isDirty colorizing.
+     */
+    public $isContainer = false;
+
     /**
      * @var bool Choose whether a block can be cached trough the caching component. Be carefull with caching container blocks.
      */
-    public $cacheEnabled = true;
+    public $cacheEnabled = false;
     
     /**
      * @var int The cache lifetime for this block in seconds (3600 = 1 hour), only affects when cacheEnabled is true
@@ -36,7 +42,7 @@ class CalloutBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Callout';
+        return 'Accordion Block';
     }
     
     /**
@@ -44,7 +50,7 @@ class CalloutBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'chat_bubble'; // see the list of icons on: https://design.google.com/icons/
+        return 'extension'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**
@@ -54,43 +60,31 @@ class CalloutBlock extends PhpBlock
     {
         return [
             'vars' => [
-                 ['var' => 'title', 'label' => 'Title', 'type' => self::TYPE_TEXTAREA],
-                 ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXT],
-                 ['var' => 'bgImage', 'label' => 'Background Image', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
+                 ['var' => 'title', 'label' => 'Title', 'type' => self::TYPE_TEXT],
+                 ['var' => 'icon', 'label' => 'Icon', 'type' => self::TYPE_TEXT],
+            ],
+            'placeholders' => [
+                 ['var' => 'item', 'label' => 'Accordion Content'],
             ],
         ];
     }
     
     /**
-     * @inheritDoc
-     */
-    public function extraVars()
-    {
-        return [
-            'bgImage' => BlockHelper::imageUpload($this->getVarValue('bgImage'), false, true),
-        ];
-    }
-
-    /**
      * {@inheritDoc} 
      *
-     * @param {{extras.bgImage}}
-     * @param {{vars.bgImage}}
-     * @param {{vars.text}}
+     * @param {{placeholders.item}}
+     * @param {{vars.icon}}
      * @param {{vars.title}}
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Callout Block</h5>' .
+        return '<h5 class="mb-3">Accordion Block</h5>' .
             '<table class="table table-bordered">' .
             '{% if vars.title is not empty %}' .
             '<tr><td><b>Title</b></td><td>{{vars.title}}</td></tr>' .
             '{% endif %}'.
-            '{% if vars.text is not empty %}' .
-            '<tr><td><b>Text</b></td><td>{{vars.text}}</td></tr>' .
-            '{% endif %}'.
-            '{% if vars.bgImage is not empty %}' .
-            '<tr><td><b>Background Image</b></td><td>{{vars.bgImage}}</td></tr>' .
+            '{% if vars.icon is not empty %}' .
+            '<tr><td><b>Icon</b></td><td>{{vars.icon}}</td></tr>' .
             '{% endif %}'.
             '</table>';
     }

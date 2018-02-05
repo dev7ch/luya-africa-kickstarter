@@ -36,7 +36,7 @@ class IntroBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Intro Block';
+        return 'Intro with slider';
     }
     
     /**
@@ -44,7 +44,7 @@ class IntroBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'desktop_mac'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**

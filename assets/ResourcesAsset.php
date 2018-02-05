@@ -11,7 +11,6 @@ class ResourcesAsset extends \luya\web\Asset
     
     public $css = [
         '//fonts.googleapis.com/css?family=Roboto:100,300,400',
-        '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
         YII_ENV . '/css/main.css'
     ];
 

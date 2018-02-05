@@ -1,8 +1,10 @@
 <?php
 use app\assets\ResourcesAsset;
+use app\assets\HeadAsset;
 use luya\helpers\Url;
 use luya\cms\widgets\LangSwitcher;
 
+HeadAsset::register($this);
 ResourcesAsset::register($this);
 
 /* @var $this luya\web\View */
@@ -31,49 +33,65 @@ $this->beginPage();
     </head>
     <body>
     <?php $this->beginBody() ?>
-    <div class="nav-container bg-light m-b-3">
-        <div class="container px-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="<?= $this->publicHtml ?>">Jabbula</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainnav">
-                    <ul class="nav navbar-nav ml-auto">
-                        <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                            <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
-                                <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
+    <div class="page">
+        <header class="nav-container page-header bg-light m-b-3">
+            <div class="container px-0">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+                    <a class="navbar-brand" href="<?= $this->publicHtml ?>">Jabbula</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainnav">
+                        <ul class="nav navbar-nav ml-auto">
+                            <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                                <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
+                                    <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </nav>
+                <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
+                <nav class="breadcrumbs mb-3 small" aria-label="breadcrumb">
+                    <ol class="breadcrumb  bg-transparent">
+                        <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                            <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
+                                <a href="<?= $item->link; ?>"<?= $item->link == Yii::$app->menu->current ? ' class="disabled text-muted" style="pointer-events: none;text-decoration: underline;" data-role="disabled"' : ''; ?>><?= $item->title; ?></a>
                             </li>
                         <?php endforeach; ?>
-                    </ul>
-                </div>
-            </nav>
-            <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
-            <nav class="breadcrumbs mb-3 small" aria-label="breadcrumb">
-                <ol class="breadcrumb  bg-transparent">
-                    <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                        <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
-                            <a href="<?= $item->link; ?>"<?= $item->link == Yii::$app->menu->current ? ' class="disabled text-muted" style="pointer-events: none;text-decoration: underline;" data-role="disabled"' : ''; ?>><?= $item->title; ?></a>
+                    </ol>
+                </nav>
+                <? endif; ?>
+            </div>
+        </header>
+        <div class="page-content">
+            <?= $content; ?>
+        </div>
+        <footer class="footer page-footer bg-primary">
+            <div class="container">
+                <ul class="nav nav-pills d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="fab fa-facebook-square"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+                <nav class="footernav float-sm-right" role="navigation">
+                    <ul class="nav nav-pills">
+                    <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'footernav']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                        <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
+                            <a class="nav-link text-light" href="<?= $item->link; ?>"><?= $item->title; ?></a>
                         </li>
                     <?php endforeach; ?>
-                </ol>
-            </nav>
-            <? endif; ?>
-        </div>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
     </div>
-
-    <?= $content; ?>
-
-    <footer class="footer">
-        <div class="container">
-                <ul>
-                    <li>This website is made with <a href="https://luya.io" target="_blank">LUYA</a></li>
-                    <li><a href="https://github.com/luyadev/luya" target="_blank"><i class="fa fa-github"></i></a></li>
-                    <li><a href="https://twitter.com/luyadev" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCfGs4sHk-D3swX0mhxv98RA" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-        </div>
-    </footer>
     <?php $this->endBody() ?>
     </body>
 </html>

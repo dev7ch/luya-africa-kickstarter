@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eaa219a85b88d8b6fc6536c15be140ed",
+    "content-hash": "83c1daef750928e9fbfeb3376baf36f0",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -434,21 +434,24 @@
             "time": "2015-09-19T16:54:05+00:00"
         },
         {
-            "name": "luyadev/luya-bootstrap3",
-            "version": "1.0.1",
+            "name": "luyadev/luya-bootstrap4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/luyadev/luya-bootstrap3.git",
-                "reference": "4fd1f35d73ad6f3e4257994af43127d9519614c7"
+                "url": "https://github.com/luyadev/luya-bootstrap4.git",
+                "reference": "a4a536499f0a0174264c28eebe3a05a000f72a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luyadev/luya-bootstrap3/zipball/4fd1f35d73ad6f3e4257994af43127d9519614c7",
-                "reference": "4fd1f35d73ad6f3e4257994af43127d9519614c7",
+                "url": "https://api.github.com/repos/luyadev/luya-bootstrap4/zipball/a4a536499f0a0174264c28eebe3a05a000f72a06",
+                "reference": "a4a536499f0a0174264c28eebe3a05a000f72a06",
                 "shasum": ""
             },
+            "require": {
+                "yiisoft/yii2": "^2.0@dev"
+            },
             "require-dev": {
-                "luyadev/luya-testsuite": "~1.0.6"
+                "luyadev/luya-testsuite": "~1.0.0"
             },
             "type": "luya-extension",
             "extra": {
@@ -459,12 +462,16 @@
                 },
                 "branch-alias": {
                     "dev-master": "1.0.x-dev"
+                },
+                "asset-pattern-skip-version": "(-build|-patch)",
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "luya\\bootstrap3\\": "src/",
-                    "luya\\bootstrap3\\tests\\": "tests/"
+                    "luya\\bootstrap4\\": "src/",
+                    "luya\\bootstrap4\\tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -473,19 +480,26 @@
             ],
             "authors": [
                 {
-                    "name": "Basil Suter",
+                    "name": "Basil",
                     "email": "git@nadar.io",
                     "homepage": "https://github.com/nadar"
                 }
             ],
-            "description": "LUYA Bootstrap 3 content",
-            "homepage": "https://luya.io",
+            "description": "Bootstrap4 Assets and Helper classes like ActiveForm for LUYA and Yii2.",
+            "homepage": "http://luya.io",
             "keywords": [
-                "bootstrap3",
+                "assets",
+                "bootstrap",
+                "bootstrap4",
+                "cms",
                 "luya",
-                "luya-blocks"
+                "luya-module",
+                "module",
+                "php",
+                "twbs4",
+                "yii2"
             ],
-            "time": "2018-01-17T10:03:56+00:00"
+            "time": "2018-01-31 12:41:49"
         },
         {
             "name": "luyadev/luya-composer",
@@ -4781,7 +4795,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "luyadev/luya-bootstrap4": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
