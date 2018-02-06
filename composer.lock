@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "83c1daef750928e9fbfeb3376baf36f0",
+    "content-hash": "50311875a5679883717bf02fe47d0856",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -801,6 +801,63 @@
                 "yii2-cms"
             ],
             "time": "2018-01-17T10:02:41+00:00"
+        },
+        {
+            "name": "luyadev/luya-module-contactform",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luyadev/luya-module-contactform.git",
+                "reference": "2bfac103be88b53141a15e5e9e4f93b3439566f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luyadev/luya-module-contactform/zipball/2bfac103be88b53141a15e5e9e4f93b3439566f1",
+                "reference": "2bfac103be88b53141a15e5e9e4f93b3439566f1",
+                "shasum": ""
+            },
+            "require-dev": {
+                "luyadev/luya-testsuite": "~1.0.0"
+            },
+            "type": "luya-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "luya\\contactform\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Basil Suter",
+                    "email": "git@nadar.io",
+                    "homepage": "https://github.com/nadar"
+                }
+            ],
+            "description": "This module provides a very fast and secure way to create customizable contact forms.",
+            "homepage": "http://luya.io",
+            "keywords": [
+                "cms",
+                "contact",
+                "dynamicformbuilder",
+                "form",
+                "luya",
+                "luya-module",
+                "module",
+                "php",
+                "yii",
+                "yii2",
+                "yii2-form",
+                "yii2form"
+            ],
+            "time": "2018-01-24T10:06:08+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

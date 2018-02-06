@@ -11,8 +11,8 @@ class m180205_033537_add_tour_booking_form extends Migration
     {
         $this->createTable('tours_bookings', [
             'id' => $this->primaryKey(),
-            'first_name' => $this->string()->notNull(),
-            'last_name' => $this->text(),
+            'first_name' => $this->string(),
+            'last_name' => $this->string(),
             'phone' => $this->string(),
             'email' => $this->string(),
             'message' => $this->text(),
@@ -29,7 +29,7 @@ class m180205_033537_add_tour_booking_form extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('tours');
+        $this->dropTable('tours_bookings');
     }
 
     /*

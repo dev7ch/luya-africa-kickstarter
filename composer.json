@@ -9,7 +9,8 @@
         "luyadev/luya-module-cms" : "~1.0.0",
         "luyadev/luya-bootstrap4" : "~1.0@dev",
         "luyadev/luya-generic" : "~1.0.0",
-        "twbs/bootstrap": "4.0.0"
+        "twbs/bootstrap": "4.0.0",
+        "luyadev/luya-module-contactform": "~1.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-gii" : "~2.0.0",
