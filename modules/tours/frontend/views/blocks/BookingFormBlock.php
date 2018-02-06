@@ -20,7 +20,7 @@ $model = $this->context->getExtraValue('model');
             'options' => ['class' => 'col-md-6'],
         ])?>
 
-        <?= $form->field($model, 'first_name')->textInput() ?>
+        <?= $form->field($model , 'first_name')->textInput() ?>
         <?= $form->field($model, 'last_name')->passwordInput() ?>
         <?= $form->field($model, 'email')->textInput() ?>
         <?= $form->field($model, 'message')->textarea() ?>

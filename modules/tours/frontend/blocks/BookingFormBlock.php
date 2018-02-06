@@ -3,7 +3,6 @@
 namespace app\modules\tours\frontend\blocks;
 
 use Yii;
-use yii\helpers\Url;
 use luya\cms\base\PhpBlock;
 use luya\cms\frontend\blockgroups\ProjectGroup;
 use \app\modules\tours\models\BookingForm;
@@ -83,21 +82,26 @@ class BookingFormBlock extends PhpBlock
 
         $model = new BookingForm();
 
+
         // Validate model
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
+
+            /* table row as array field => model field value (optionally) */
+
             $values = [
-                'first_name' => 'dfgg',
-                'last_name' => 'fff',
-                'email' => 'dgg',
-                'phone' => 'sdf',
-                'message' => 'dfdf',
+                'first_name' => $model->first_name,
+                'last_name' => $model->last_name,
+                'email' => $model->email,
+                'phone' => $model->phone,
+                'message' => $model->message,
             ];
+            $model->attributes = $values;
 
-            $model->saveBooking($values);
+            $model->save(false);
 
-            // Save the model
             if ($model->save()) {
+
                 Yii::$app->session->setFlash('BookingFormBlockSuccess');
                 Yii::$app->response->redirect(Yii::$app->request->url);
 
