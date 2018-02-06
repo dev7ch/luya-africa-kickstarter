@@ -95,7 +95,7 @@ class BookingFormBlock extends PhpBlock
                 'phone' => $model->phone,
                 'message' => $model->message,
             ];
-            
+
             $model->attributes = $values;
 
             $model->save(false);

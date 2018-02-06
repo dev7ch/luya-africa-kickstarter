@@ -25,7 +25,7 @@ $model = $this->context->getExtraValue('model');
         <?= $form->field($model, 'email')->textInput() ?>
         <?= $form->field($model, 'message')->textarea() ?>
 
-        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary-outline']) ?>
+        <?= Html::submitButton('Submit', ['class' => 'btn btn-outline-primary']) ?>
 
         <?php ActiveForm::end(); ?>
     <?php endif; ?>
