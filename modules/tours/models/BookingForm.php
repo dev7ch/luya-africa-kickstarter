@@ -47,5 +47,4 @@ class BookingForm extends \yii\db\ActiveRecord
 
         return $mail;
     }
-
 }

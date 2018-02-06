@@ -86,8 +86,7 @@ class BookingFormBlock extends PhpBlock
         // Validate model
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
-
-            /* table row as array field => model field value (optionally) */
+            // table row as array field => model field value (optionally)
 
             $values = [
                 'first_name' => $model->first_name,
@@ -96,6 +95,7 @@ class BookingFormBlock extends PhpBlock
                 'phone' => $model->phone,
                 'message' => $model->message,
             ];
+            
             $model->attributes = $values;
 
             $model->save(false);

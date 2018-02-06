@@ -91,7 +91,7 @@ class Booking extends NgRestModel
             'last_name' => 'text',
             'phone' => 'text',
             'email' => 'text',
-            'message' => 'text',
+            'message' => 'textarea',
             'ip' => 'text',
             'date' => 'text',
             'is_confirmed' => 'toggleStatus',
