@@ -66,6 +66,33 @@ $config = [
             'useAppViewPath' => true, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
         ],
         'toursadmin' => 'app\modules\tours\admin\Module',
+        'contactform' => [
+            'class' => 'luya\contactform\Module',
+            'useAppViewPath' => true,
+            'mailTitle' => 'Booking Form',
+            'attributes' => [
+                'first_name', 'last_name', 'email', 'phone', 'message',
+            ],
+            'attributeLabels' => [
+                'first_name' => 'First Name',
+                'last_name' => 'Last Name',
+                'email' => 'E-Mail',
+                'phone' => 'Phone',
+                'message' => 'Message',
+            ],
+            'rules' => [
+                [['first_name', 'last_name', 'email'], 'required'],
+                ['email', 'email'],
+                [['phone', 'message'], 'safe'],
+            ],
+            'callback' => function($model) {
+                // insert the name of each contact form into `tours_bookings` table:
+            },
+            'recipients' => [
+                'your@mail.com',
+            ]
+
+        ],
     ],
     'components' => [
         /*

@@ -86,14 +86,9 @@ $config = [
             ],
             'callback' => function($model) {
                 // insert the name of each contact form into `tours_bookings` table:
-                Yii::$app->db->createCommand()->insert('tours_bookings', ['first_name' => $model->fist_name])->execute();
-                Yii::$app->db->createCommand()->insert('tours_bookings', ['last_name' => $model->last_name])->execute();
-                Yii::$app->db->createCommand()->insert('tours_bookings', ['email' => $model->email])->execute();
-                Yii::$app->db->createCommand()->insert('tours_bookings', ['phone' => $model->phone])->execute();
-                Yii::$app->db->createCommand()->insert('tours_bookings', ['message' => $model->message])->execute();
             },
             'recipients' => [
-                'silvan@dev7.ch',
+                'your@mail.com',
             ]
 
         ],
