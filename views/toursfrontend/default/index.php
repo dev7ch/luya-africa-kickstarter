@@ -7,16 +7,16 @@
         <div class="card border-info">
             <img class="card-img-top" src="<?= $image ?>" alt="<?= str_replace(' ', '-', strtolower($item->title)) ?>">
             <div class="card-body">
-                <h5 class="card-title"><?= $item->title ?></h5>
+                <h3 class="card-title"><?= $item->title ?></h3>
                 <p class="card-text"><?= $item->text ?></p>
             </div>
             <? if (!empty($link)):?>
-                <div class="card-footer bg-transparent border-0">
+                <div class="card-footer bg-info">
                     <button type="button" class="btn btn-primary">
-                        <a style="color: inherit; text-decoration: inherit" href="<?= $item->link ?>">Booking &nbsp;<i class="fas fa-calendar-check"></i></a>
+                        <a style="color: inherit; text-decoration: inherit" href="<?= $item->link ?>">Tour Info</a>
                     </button>
-                    <button type="button" class="btn btn-link btn-primary border-0">
-                        <a style="color: inherit; text-decoration: inherit" href="<?= $item->link ?>">More</a>
+                    <button type="button" class="btn btn-outline-light float-right">
+                        <a style="color: inherit; text-decoration: none !important;" href="<?= $item->link ?>"><i class="fas fa-calendar-alt"></i> &nbsp; Booking</a>
                     </button>
                 </div>
             <? endif; ?>

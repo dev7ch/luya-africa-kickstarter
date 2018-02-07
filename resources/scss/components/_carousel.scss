@@ -4,6 +4,7 @@
     }
 
     .card {
+        background-color: lighten($info, 20);
         @include hover(card);
     }
 }

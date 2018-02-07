@@ -6,6 +6,12 @@
 
             border-color: $info;
             background-color: lighten($info, 30);
+
+            .card-img-top {
+
+                transition: transform .90s ease-out;
+                transform: scale(1.11) translateY(-5%);
+            }
         }
 
         .card-img-top {
