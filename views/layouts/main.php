@@ -51,22 +51,26 @@ $this->beginPage();
                         </ul>
                     </div>
                 </nav>
-                <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
-                <nav class="breadcrumbs mb-3 small" aria-label="breadcrumb">
-                    <ol class="breadcrumb  bg-transparent">
-                        <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                            <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
-                                <a href="<?= $item->link; ?>"<?= $item->link == Yii::$app->menu->current ? ' class="disabled text-muted" style="pointer-events: none;text-decoration: underline;" data-role="disabled"' : ''; ?>><?= $item->title; ?></a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ol>
-                </nav>
-                <? endif; ?>
             </div>
         </header>
         <div class="page-content">
             <?= $content; ?>
         </div>
+        <section class="breadcrumbs-wrapper bg-info">
+            <div class="container">
+                <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
+                    <nav class="breadcrumbs small" aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent m-0">
+                            <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                                <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
+                                    <a href="<?= $item->link; ?>"<?= $item->link == Yii::$app->menu->current ? ' class="disabled text-muted" style="pointer-events: none;text-decoration: none; color:inherit" data-role="disabled"' : 'style="text-decoration: underline; color:inherit"'; ?>><?= $item->title; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </nav>
+                <? endif; ?>
+            </div>
+        </section>
         <footer class="footer page-footer bg-primary">
             <div class="container">
                 <ul class="nav nav-pills d-inline-flex">

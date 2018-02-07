@@ -3,7 +3,7 @@
         <?= $placeholders['intro']; ?>
     </section>
 <? endif; ?>
-<section class="content">
+<section class="content py-5">
     <div class="container">
         <?= $placeholders['content']; ?>
     </div>

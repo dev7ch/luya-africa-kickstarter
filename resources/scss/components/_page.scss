@@ -1,4 +1,5 @@
 .page {
+    margin-top: 56px;
     display: flex;
     flex-direction: column;
     height: 100vh; /* 1 */
@@ -6,6 +7,15 @@
 
 .page-header, .page-footer {
     flex-shrink: 0; /* 2 */
+}
+
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $zindex-fixed;
+
+    @include dropshadow();
 }
 
 .page-content {

@@ -1,17 +1,29 @@
+// Setting bootstrap default static vars ( e.g. all values with !default suffix, like colors)
+
+@import "base/colors";
+
 // Load bootstrap from vendor
+
 @import "../../vendor/twbs/bootstrap/scss/bootstrap";
 
+// Override bootstrap vars
 
-// Vars
 @import "base/vars";
-@import "base/colors";
+
+// Import general base elements
+
+@import "base/typo";
+@import "base/html";
 
 // Mixins
 
 @import "mixins/breakpoints";
+@import "mixins/dropshadow";
+@import "mixins/hover";
 
 // Components
 
+@import "components/breadcrumbs";
 @import "components/callout";
 @import "components/carousel";
 @import "components/content";

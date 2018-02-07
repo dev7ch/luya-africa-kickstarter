@@ -1,0 +1,24 @@
+.breadcrumb {
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    &-item {
+        color: $white;
+
+        &.active {
+            color: $gray-400;
+
+            &:before {
+                color: inherit;
+            }
+        }
+
+        a.text-muted {
+            color: $gray-400 !important;
+        }
+
+        &:before {
+            color: inherit;
+        }
+    }
+}

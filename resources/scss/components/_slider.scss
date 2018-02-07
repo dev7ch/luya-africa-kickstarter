@@ -1,9 +1,71 @@
 .slider {
     position: relative;
-    min-height: 320px;
+    min-height: 300px;
+    max-width: 100%;
+    background-color: gray('500');
+    border-radius: $border-radius;
+
+    @include dropshadow();
+
+    @include screen-min(sm) {
+        min-height: 380px;
+    }
+}
+
+.slider-title {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 0;
+
+    @include screen-min(sm) {
+        margin-bottom: 10px;
+    }
 }
 
 .slider-image {
-    height: 320px;
+    position: relative;
+    height: 300px;
     background-size: cover;
+
+    @include screen-min(sm) {
+        min-height: 380px;
+    }
+}
+
+.slider-content {
+    position: absolute;
+    min-height: 30px;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(0);
+    max-width: 100%;
+    padding: 20px;
+    background-color: transparentize(lighten($info, 20), .2);
+    color: $dark;
+
+    @include screen-min(sm) {
+        min-height: 120px;
+    }
+}
+
+.slider-text {
+    display: none;
+
+    @include screen-min(sm) {
+        display: block;
+    }
+}
+
+.slider-nav {
+
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    @include screen-min(sm) {
+        width: calc(100% + 80px);
+        left: -40px;
+    }
 }

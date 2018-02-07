@@ -17,6 +17,7 @@
  */
 
 $image = $this->extraValue('image') ? $this->extraValue('image')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+$imageSmall = $this->extraValue('image') ? $this->extraValue('imageSmall')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 $attachment = $this->extraValue('attachment');
 $function = $this->varValue('function');
 $link = $this->varValue('link') ? $this->extraValue('link') : false;
@@ -28,7 +29,7 @@ $text = $this->extraValue('text');
 <? endif ?>
     <li class="media mb-5">
         <?= $link != false ? '<a href="' . $link->link . '">' : ''; ?>
-        <img class="mr-3 img-thumbnail" src="<?= $image ?>" alt="<?= $name ?>">
+        <img class="mr-2 img-thumbnail" src="<?= $image ?>" alt="<?= $name ?>">
         <?= $link != false ? '</a>' : ''; ?>
         <div class="media-body">
             <h3 class="mt-0 mb-3"><?= $name ?></h3>

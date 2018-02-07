@@ -19,17 +19,17 @@ $item = $this->placeholderValue('item');
 
 ?>
 <? if(!$this->getIsPrevEqual()):?>
-<div id="accordion-<?= $id['block_id']; ?>">
+<div id="accordion-<?= $id['block_id']; ?>" class="py-5">
 <? endif; ?>
-    <div class="card">
-        <div class="card-header" id="#heading-<?= $itemId ?>">
-            <h5 class="mb-0">
-                <button class="btn btn-link d-block" data-toggle="collapse" data-target="#collapse-<?= $itemId; ?>" aria-expanded="true" aria-controls="collapseOne">
-                    <?= $title ?>
-                </button>
-            </h5>
-        </div>
-        <div id="collapse-<?= $itemId ?>" class="collapse" aria-labelledby="heading-<?= $itemId; ?>" data-parent="#accordion-<?= $id['block_id'] ?>">
+    <div class="card bg-light border-0 rounded-0">
+        <button type="button" class="btn btn-info p-0 m-0 text-left text-light" data-toggle="collapse" data-target="#collapse-<?= $itemId; ?>" aria-expanded="true" aria-controls="collapse-<?= $itemId ?>">
+            <div class="card-header" id="heading-<?= $itemId ?>">
+                <h4 class="mb-0 accordion-title">
+                        <?= $title ?>
+                </h4>
+            </div>
+        </button>
+        <div id="collapse-<?= $itemId ?>" class="collapse<?= !$this->getIsPrevEqual() ? ' show' : '' ?>" aria-labelledby="heading-<?= $itemId; ?>" data-parent="#accordion-<?= $id['block_id'] ?>">
             <div class="card-body">
                 <?= $item ?>
             </div>

@@ -1,0 +1,15 @@
+.callout {}
+
+.callout-content {
+    max-width: 720px;
+    border-radius: $border-radius;
+    color: $white;
+
+    p {
+        color: darken($white, 5);
+
+        &.footnote {
+            font-style: oblique;
+        }
+    }
+}

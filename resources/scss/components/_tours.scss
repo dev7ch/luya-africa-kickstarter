@@ -3,4 +3,10 @@
     .card-img-top {
         max-width: 100%;
     }
+
+    .card-group {
+        .card {
+            @include hover(true);
+        }
+    }
 }

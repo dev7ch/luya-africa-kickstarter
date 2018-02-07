@@ -1,6 +1,9 @@
 .carousel {
-
     &.card-deck {
         flex-flow: column nowrap;
+    }
+
+    .card {
+        @include hover(card);
     }
 }

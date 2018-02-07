@@ -89,7 +89,8 @@ class TeamBlock extends PhpBlock
     public function extraVars()
     {
         return [
-            'image' => BlockHelper::imageUpload($this->getVarValue('image'), false, true),
+            'image' => BlockHelper::imageUpload($this->getVarValue('image'), 'medium-crop', true),
+            'imageSmall' => BlockHelper::imageUpload($this->getVarValue('image'), 'small-crop', true),
             'attachment' => $this->getAttachments(),
             'link' => BlockHelper::linkObject($this->getVarValue('link')),
             'text' => BlockHelper::markdown($this->getVarValue('text')),

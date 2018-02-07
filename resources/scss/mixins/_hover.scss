@@ -1,0 +1,27 @@
+@mixin hover($card:false, $accordion:false) {
+    @if $card {
+        overflow: hidden;
+        transition: background-color .25s ease-in, box-shadow .5s ease-out, border-color .35s ease-in-out;
+        &:hover {
+
+            border-color: $info;
+            background-color: lighten($info, 30);
+        }
+
+        .card-img-top {
+
+            transition: transform .90s ease-out;
+
+            &:hover {
+                transform: scale(1.11) translateY(-5%);
+            }
+        }
+    }
+    @if $accordion {
+        transition: background-color .25s ease-in, box-shadow .5s ease-out, border-color .35s ease-in-out;
+        &:hover {
+            border-color: $primary;
+            background-color: lighten($primary, 30);
+        }
+    }
+}

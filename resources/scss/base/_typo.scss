@@ -1,0 +1,31 @@
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+#{headings(1,6)} {
+    font-family: "Slabo 27px", serif;
+}
+
+#{headings(1,3)} {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+#{headings(3,6)} {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+
+p:not(.card-text) {
+    max-width: 720px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+

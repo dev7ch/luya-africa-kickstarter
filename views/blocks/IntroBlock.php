@@ -12,9 +12,8 @@
  * @var $this \luya\cms\base\PhpBlockView
  */
 
-$bgImage = $this->extraValue('bgImage') ? $this->extraValue('bgImage')->source : '';
+$bgImage = $this->extraValue('bgImage') ? $this->extraValue('bgImage')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 $slides = $this->extraValue('slides');
-
 
 ?>
 
@@ -24,12 +23,15 @@ $slides = $this->extraValue('slides');
             <div class="slider">
                 <?php foreach ($slides as $slide): ?>
                     <div class="slider-image" <?= $slide['image'] != null ? ' style="background-image: url(\'' . str_replace(' ', '/',($slide['image']->source)) . '\')"' : ''; ?>>
-                        <h1><?= $slide['title'] ?></h1>
-                        <?= $slide['text'] ?>
-
-                        <? if ($slide['link'] != null): ?>
-                            <a class="slider-link" href="<?= $slide['link'] ?>"> More </a>
-                        <? endif; ?>
+                        <div class="slider-content">
+                            <h1 class="slider-title"><?= $slide['title'] ?></h1>
+                            <span class="slider-text m-0"><?= $slide['text'] ?></span>
+                            <? if ($slide['link'] != null): ?>
+                                <button type="button" class="btn btn-primary">
+                                    <a class="slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit">Info</a>
+                                </button>
+                            <? endif; ?>
+                        </div>
                     </div>
                 <?php endforeach; ?>
 
@@ -52,13 +54,17 @@ $slides = $this->extraValue('slides');
                     ',
                     \yii\web\View::POS_READY) ?>
             </div>
+            <div class="slider-nav d-flex">
+                <button type="button" class="intro-slider-prev btn btn-link mr-suto"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="intro-slider-next btn btn-link ml-auto"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
-        <button type="button" class="intro-slider-prev">Prev</button>
-        <button type="button" class="intro-slider-next">Next</button>
     </div>
 </div>
-<div class="container">
-    <div class="intro-text py-5">
-        <?= $this->extraValue('text'); ?>
+<article class="intro-text-wrapper mt-5">
+    <div class="container">
+        <div class="intro-text pt-5">
+            <?= $this->extraValue('text'); ?>
+        </div>
     </div>
-</div>
+</article>
