@@ -18,7 +18,7 @@ class Module extends \luya\admin\base\Module
         return (new \luya\admin\components\AdminMenuBuilder($this))
             ->node('Theme Settings', 'format_paint')
             ->group('Group')
-            ->itemApi('Theme Settings', 'themeadmin/theme/index', 'brush', 'api-theme-settings');
+            ->itemRoute('Theme Settings', 'themeadmin/theme/index', 'brush');
     }
 /*
     public $urlRules = [
