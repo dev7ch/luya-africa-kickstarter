@@ -65,6 +65,9 @@ $config = [
             'useAppViewPath' => true, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
         ],
         'toursadmin' => 'app\modules\tours\admin\Module',
+
+        'themeadmin' => 'app\modules\theme\admin\Module',
+
         'contactform' => [
             'class' => 'luya\contactform\Module',
             'useAppViewPath' => true,

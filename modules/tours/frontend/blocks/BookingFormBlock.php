@@ -98,7 +98,8 @@ class BookingFormBlock extends PhpBlock
 
             $model->attributes = $values;
 
-            $model->save(false);
+
+            $model->save();
 
             if ($model->save()) {
 

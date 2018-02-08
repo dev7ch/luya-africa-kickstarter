@@ -10,6 +10,10 @@ ResourcesAsset::register($this);
 /* @var $this luya\web\View */
 /* @var $content string */
 
+$query = new \yii\db\Query();
+
+$theme = $query->select('id, site_name, company_email, logo')->from('theme')->one();
+
 $this->beginPage();
 ?>
 <!DOCTYPE html>
@@ -28,16 +32,20 @@ $this->beginPage();
         <link rel="manifest" href="<?= $this->publicHtml ?>/favicon/manifest.json">
         <link rel="mask-icon" href="<?= $this->publicHtml ?>/favicon/safari-pinned-tab.svg" color="#A50045">
         <meta name="theme-color" content="#a04c3c">
-        <title><?= $this->title; ?></title>
+        <title><?= $theme['site_name'] ? $theme['site_name'] : $this->title; ?></title>
         <?php $this->head() ?>
     </head>
     <body>
-    <?php $this->beginBody() ?>
+    <?php $this->beginBody();?>
+
     <div class="page">
         <header class="nav-container page-header bg-light m-b-3">
             <div class="container px-0">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-                    <a class="navbar-brand" href="<?= $this->publicHtml ?>/">Jabbula</a>
+                    <a class="navbar-brand" href="<?= $this->publicHtml ?>/">
+                        <?= $theme['logo'] ? '<img src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('small-thumbnail')->source . '" alt="' . $this->title . '">' : ''; ?>
+                        <?= $theme['site_name'] ? $theme['site_name'] : 'Jabbula' ?>
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

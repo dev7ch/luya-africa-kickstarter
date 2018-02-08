@@ -13,4 +13,6 @@ class BookingController extends \luya\admin\ngrest\base\Api
      * @var string The path to the model which is the provider for the rules and fields.
      */
     public $modelClass = 'app\modules\tours\models\Booking';
+    public $enableCsrfValidation = false;
+    public $enableCors;
 }

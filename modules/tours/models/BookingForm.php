@@ -4,7 +4,7 @@ namespace app\modules\tours\models;
 
 use Yii;
 
-class BookingForm extends \yii\db\ActiveRecord
+class BookingForm extends \luya\admin\ngrest\base\NgRestModel
 {
 
     /**
@@ -18,6 +18,15 @@ class BookingForm extends \yii\db\ActiveRecord
     {
         return 'tours_bookings';
     }
+
+    /**
+     * @inheritdoc
+     */
+    public static function ngRestApiEndpoint()
+    {
+        return 'api-tours-booking';
+    }
+
 
     public $first_name;
     public $last_name;
@@ -46,5 +55,13 @@ class BookingForm extends \yii\db\ActiveRecord
                 ->send();
 
         return $mail;
+    }
+
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['restcreate'] = ['first_name','last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed', 'email'];
+        $scenarios['restupdate'] = ['first_name','last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed', 'email'];
+        return $scenarios;
     }
 }
