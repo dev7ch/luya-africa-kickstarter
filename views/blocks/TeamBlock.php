@@ -44,8 +44,9 @@ $text = $this->extraValue('text');
 </article>
 <? endif ?>
 <?= $this->appView->registerJs('
-    sr.reveal(\'.team-image\', {origin:\'left\', reset: true, scale:0, delay:0, duration:500, });
-    sr.reveal(\'.team-content\', {origin:\'right\', reset: false, scale:0, delay:200, duration:600, opacity:0});
+    window.team = ScrollReveal();
+    team.reveal(\'.team-image\', {origin:\'left\', reset: true, scale:0, delay:0, duration:500, });
+    team.reveal(\'.team-content\', {origin:\'right\', reset: false, scale:0, delay:200, duration:600, opacity:0});
     ',
     \yii\web\View::POS_READY) ?>
 

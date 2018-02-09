@@ -38,7 +38,8 @@ $slides = $this->extraValue('slides');
 
 
                 <?= $this->appView->registerJs('
-                        sr.reveal(
+                        window.intro = ScrollReveal();
+                        intro.reveal(
                         \'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
       
                         const IntroSlider = new Siema({
@@ -57,7 +58,7 @@ $slides = $this->extraValue('slides');
                         document.querySelector(\'.intro-slider-prev\').addEventListener(\'click\', () => IntroSlider.prev());
                         document.querySelector(\'.intro-slider-next\').addEventListener(\'click\', () => IntroSlider.next());
                     ',
-                    \yii\web\View::POS_READY) ?>
+                    \yii\web\View::POS_END) ?>
             </div>
             <div class="slider-nav d-flex">
                 <button type="button" class="intro-slider-prev btn btn-link mr-suto"><i class="fas fa-chevron-left"></i></button>

@@ -30,7 +30,8 @@ $tour = $this->context->getExtraValue('model');
             </div>
         <? endforeach; ?>
         <?= $this->appView->registerJs(
-            'sr.reveal(\' .card\', {reset:true,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);
+            'window.tours = ScrollReveal();
+            tours.reveal(\' .card\', {reset:true,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);
             new Siema({
                   selector: \'.carousel\',
                   duration: 200,

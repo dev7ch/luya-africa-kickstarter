@@ -17,7 +17,7 @@ class ResourcesAsset extends \luya\web\Asset
     public $js = [
         '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
         YII_ENV . '/js/main.min.js',
-        'window.sr = ScrollReveal();' // improve: only load if needed
+        'window.sr = ScrollReveal()'
     ];
     
     public $publishOptions = [
