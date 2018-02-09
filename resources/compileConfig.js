@@ -66,7 +66,7 @@ module.exports = {
             "dist/{env}/css/": ['scss/**/*.scss']
         },
         js: {
-            "dist/{env}/js/main.min.js": ['js/**/*.js']
+            "dist/{env}/js/main.min.js": ['node_modules/scrollreveal/dist/scrollreveal.js','js/**/*.js']
         },
         images: {
             "public_html/images/": 'public_html/images/*'
@@ -78,14 +78,14 @@ module.exports = {
 
     // All tasks above are available (css, js, images and svg)
     combinedTasks: {
-        default: [ 'css', 'js' ],
-        compile: [ 'css', 'js' ],
-        compress: [ 'images', 'svg' ]
+        default: ['css', 'js'],
+        compile: ['css', 'js'],
+        compress: ['images', 'svg']
     },
 
     watchTask: {
-        'css': [ 'css' ],
-        'js': [ 'js' ]
+        'css': ['css'],
+        'js': ['js']
     }
 
 };

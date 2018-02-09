@@ -4,6 +4,7 @@
     max-width: 720px;
     border-radius: $border-radius;
     color: $white;
+    background-color: transparentize($brown-light, .65) ;
 
     p {
         color: darken($white, 5);

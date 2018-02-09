@@ -30,22 +30,23 @@ $tour = $this->context->getExtraValue('model');
             </div>
         <? endforeach; ?>
         <?= $this->appView->registerJs(
-            'new Siema({
-                                  selector: \'.carousel\',
-                                  duration: 200,
-                                  easing: \'ease-out\',
-                                  perPage:{                         
-                                    400: 2,
-                                    880: 3
-                                   },
-                                  startIndex: 0,
-                                  draggable: true,
-                                  multipleDrag: true,
-                                  threshold: 20,
-                                  loop: true,
-                                  onInit: () => {},
-                                  onChange: () => {},
-                                });',
+            'sr.reveal(\' .card\', {reset:true,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);
+            new Siema({
+                  selector: \'.carousel\',
+                  duration: 200,
+                  easing: \'ease-out\',
+                  perPage:{                         
+                    400: 2,
+                    880: 3
+                   },
+                  startIndex: 0,
+                  draggable: true,
+                  multipleDrag: true,
+                  threshold: 20,
+                  loop: true,
+                  onInit: () => {},
+                  onChange: () => {},
+                });',
             \yii\web\View::POS_LOAD)
         ?>
     </div>

@@ -5,11 +5,16 @@
     &-item {
         color: $white;
 
+
+        &:before {
+            color: $light !important;
+        }
+
         &.active {
             color: $gray-400;
 
             &:before {
-                color: inherit;
+                color: $light;
             }
         }
 

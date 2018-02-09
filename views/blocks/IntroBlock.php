@@ -35,7 +35,12 @@ $slides = $this->extraValue('slides');
                     </div>
                 <?php endforeach; ?>
 
+
+
                 <?= $this->appView->registerJs('
+                        sr.reveal(
+                        \'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
+      
                         const IntroSlider = new Siema({
                             selector: \'.slider\',
                             duration: 200,
@@ -45,7 +50,7 @@ $slides = $this->extraValue('slides');
                             draggable: true,
                             multipleDrag: true,
                             threshold: 20,
-                            loop: false,
+                            loop: true,
                             onInit: () => {},
                             onChange: () => {},
                         });

@@ -20,7 +20,7 @@ $text = $this->varValue('text');
 <? if (!empty($title || $text)): ?>
     <div class="callout-image py-5" style="background-image: url('<?= $bgImage ?>')">
         <div class="container">
-            <div class="callout-content bg-info p-3">
+            <div class="callout-content p-3">
                 <h4><?= $title ?></h4>
                 <p><?= $text ?></p>
             </div>

@@ -25,20 +25,27 @@ $name = $this->varValue('name');
 $text = $this->extraValue('text');
 ?>
 <? if (!$this->getIsPrevEqual()): ?>
-<div class="row">
-<? endif ?>
-    <div class="col-sm-12 col-md-4 col-lg-3 border-bottom-1 mb-3">
-        <?= $link != null ? '<a href="' . $link->link . '">' : ''; ?>
-        <img class="mr-2 img-thumbnail" src="<?= $image ?>" alt="<?= $name ?>">
-        <?= $link != null ? '</a>' : ''; ?>
+<article class="team">
+    <div class="row">
+    <? endif ?>
+        <div class="team-image col-sm-12 col-md-4 col-lg-3 border-bottom-1 mb-3">
+            <?= $link != null ? '<a href="' . $link->link . '">' : ''; ?>
+            <img class="mr-2 img-thumbnail" src="<?= $image ?>" alt="<?= $name ?>">
+            <?= $link != null ? '</a>' : ''; ?>
+        </div>
+        <div class="team-content col-sm-12 col-md-8 col-lg-9 mb-5">
+            <h3 class="mt-0 mb-3"><?= $name ?></h3>
+            <p class="lead"><?= $function ?></p>
+            <?= $text ?>
+            <?= $link != null ? '<button type="button" class="btn btn-primary mt-3"><a style="color:inherit;text-decoration: none" href="' . $link->link . '"><i class="fas fa-user"></i> Profile</a></button>' : ''; ?>
+        </div>
+    <? if (!$this->getIsNextEqual()): ?>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-9 mb-3">
-        <h3 class="mt-0 mb-3"><?= $name ?></h3>
-        <p class="lead"><?= $function ?></p>
-        <?= $text ?>
-        <?= $link != null ? '<button type="button" class="btn btn-primary mt-3"><a style="color: inherit;text-decoration: none" href="' . $link->link . '"><i class="fas fa-user"></i> Profile</a></button>' : ''; ?>
-    </div>
-<? if (!$this->getIsNextEqual()): ?>
-</div>
+</article>
 <? endif ?>
+<?= $this->appView->registerJs('
+    sr.reveal(\'.team-image\', {origin:\'left\', reset: true, scale:0, delay:0, duration:500, });
+    sr.reveal(\'.team-content\', {origin:\'right\', reset: false, scale:0, delay:200, duration:600, opacity:0});
+    ',
+    \yii\web\View::POS_READY) ?>
 

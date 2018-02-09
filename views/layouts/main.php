@@ -43,7 +43,7 @@ $this->beginPage();
             <div class="container px-0">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
                     <a class="navbar-brand" href="<?= $this->publicHtml ?>/">
-                        <?= $theme['logo'] ? '<img src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('small-thumbnail')->source . '" alt="' . $this->title . '">' : ''; ?>
+                        <?= $theme['logo'] ? '<img class="logo" src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('logo')->source . '" alt="' . $this->title . '">' : ''; ?>
                         <?= $theme['site_name'] ? $theme['site_name'] : 'Jabbula' ?>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +82,7 @@ $this->beginPage();
                 <? endif; ?>
             </div>
         </section>
-        <footer class="footer page-footer bg-primary">
+        <footer class="footer page-footer">
             <div class="container">
                 <ul class="nav nav-pills d-inline-flex">
                     <li class="nav-item">

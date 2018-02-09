@@ -6,12 +6,13 @@
 
     .card-group {
         .card {
-
+            border-color:lighten($info, 25) !important;
             background-color: lighten($info, 20);
             @include hover(true);
 
             .card-footer {
-                border-top: 1px solid $brown;
+                background-color:lighten($info, 10) !important;
+                border-top: none;
             }
         }
     }
