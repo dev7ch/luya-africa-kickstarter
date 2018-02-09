@@ -2,6 +2,7 @@
 
 namespace app\blocks;
 
+use Yii;
 use luya\cms\base\PhpBlock;
 use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
@@ -16,7 +17,7 @@ class TeamBlock extends PhpBlock
     /**
      * @var bool Choose whether a block can be cached trough the caching component. Be carefull with caching container blocks.
      */
-    public $cacheEnabled = true;
+    public $cacheEnabled = false;
     
     /**
      * @var int The cache lifetime for this block in seconds (3600 = 1 hour), only affects when cacheEnabled is true
@@ -60,7 +61,7 @@ class TeamBlock extends PhpBlock
                  ['var' => 'link', 'label' => 'Link', 'type' => self::TYPE_LINK],
                  ['var' => 'image', 'label' => 'Image', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
                  ['var' => 'attachment', 'label' => 'Attachments', 'type' => self::TYPE_MULTIPLE_INPUTS, 'options' => [
-                     ['var' => 'title', 'label' => 'Titel', 'type' => self::TYPE_TEXT],
+                     ['var' => 'title', 'label' => 'Title', 'type' => self::TYPE_TEXT],
                      ['var' => 'file', 'label' => 'PDF File', 'type' => self::TYPE_FILEUPLOAD, 'options' => ['extensions' => 'pdf']],
                  ]],
             ],
@@ -82,7 +83,7 @@ class TeamBlock extends PhpBlock
 
         return $attachments;
     }
-    
+
     /**
      * @inheritDoc
      */
@@ -91,8 +92,8 @@ class TeamBlock extends PhpBlock
         return [
             'image' => BlockHelper::imageUpload($this->getVarValue('image'), 'medium-crop', true),
             'imageSmall' => BlockHelper::imageUpload($this->getVarValue('image'), 'small-crop', true),
-            'attachment' => $this->getAttachments(),
             'link' => BlockHelper::linkObject($this->getVarValue('link')),
+            'attachment' => $this->getAttachments(),
             'text' => BlockHelper::markdown($this->getVarValue('text')),
         ];
     }
@@ -111,25 +112,23 @@ class TeamBlock extends PhpBlock
     public function admin()
     {
         return '<h5 class="mb-3">Team Block</h5>' .
-            '<table class="table table-bordered">' .
+            '{% if vars.image is not empty %}' .
+            '<img class="img-thumbnail d-block mb-2" style="max-width:150px;" src="{{extras.image.source}}" alt="none">' .
+            '{% endif %}'.
             '{% if vars.name is not empty %}' .
-            '<tr><td><b>Name</b></td><td>{{vars.name}}</td></tr>' .
+            '<b class="inline">Name: </b>{{vars.name}}<br/>' .
             '{% endif %}'.
             '{% if vars.function is not empty %}' .
-            '<tr><td><b>Function</b></td><td>{{vars.function}}</td></tr>' .
+            '<b class="inline">Function: </b>{{vars.function}}' .
             '{% endif %}'.
             '{% if vars.text is not empty %}' .
-            '<tr><td><b>Text</b></td><td>{{vars.text}}</td></tr>' .
+            '<hr><b>Text:</b><br/>{{vars.text}}' .
             '{% endif %}'.
             '{% if vars.link is not empty %}' .
-            '<tr><td><b>Link</b></td><td>{{vars.link}}</td></tr>' .
-            '{% endif %}'.
-            '{% if vars.image is not empty %}' .
-            '<tr><td><b>Image</b></td><td>{{vars.image}}</td></tr>' .
+            '<span class="d-block my-2"><b>Link: </b>{{extras.link.href}}</span>' .
             '{% endif %}'.
             '{% if vars.attachment is not empty %}' .
-            '<tr><td><b>Attachments</b></td><td>{{vars.attachment}}</td></tr>' .
-            '{% endif %}'.
-            '</table>';
+            '{% for attach in extras.attachment %} {{extras.attachment}} {% endfor %}' .
+            '{% endif %}';
     }
 }

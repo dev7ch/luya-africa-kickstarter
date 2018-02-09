@@ -94,6 +94,7 @@ class IntroBlock extends PhpBlock
     {
         return [
             'bgImage' => BlockHelper::imageUpload($this->getVarValue('bgImage'), false, true),
+            'bgImageAdmin' => BlockHelper::imageUpload($this->getVarValue('bgImage'), 'medium-thumbnail', true),
             'slides' => $this->getSlides(),
             'text' => BlockHelper::markdown($this->getVarValue('text')),
         ];
@@ -110,16 +111,20 @@ class IntroBlock extends PhpBlock
     public function admin()
     {
         return '<h5 class="mb-3">Intro Block</h5>' .
-            '<table class="table table-bordered">' .
             '{% if vars.bgImage is not empty %}' .
-            '<tr><td><b>Background Image</b></td><td>{{vars.bgImage}}</td></tr>' .
+            '<img src="{{extras.bgImageAdmin.source}}" alt="none">' .
             '{% endif %}'.
             '{% if vars.slider is not empty %}' .
-            '<tr><td><b>Slider</b></td><td>{{vars.slider}}</td></tr>' .
+            '<h6>Slider</h6>' .
+            '{%for slide in extras.slides%}' .
+            '<hr><img style="max-width:200px; display: block" src="{{slide.image.source}}" alt="slide">' .
+            '<b class="my-2">{{ slide.title}}</b>' .
+            '<p>{{ slide.text }}</p>' .
+            '<cite class="my-2">Link: <br />{{slide.link.link}}</cite>'.
+            '{% endfor %}'.
             '{% endif %}'.
             '{% if vars.text is not empty %}' .
-            '<tr><td><b>Text</b></td><td>{{vars.text}}</td></tr>' .
-            '{% endif %}'.
-            '</table>';
+            '<hr><b class="my-2">Intro Text:</b> <br />{{vars.text}}' .
+            '{% endif %}';
     }
 }

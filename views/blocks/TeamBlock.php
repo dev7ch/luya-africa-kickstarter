@@ -20,24 +20,25 @@ $image = $this->extraValue('image') ? $this->extraValue('image')->source : 'data
 $imageSmall = $this->extraValue('image') ? $this->extraValue('imageSmall')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 $attachment = $this->extraValue('attachment');
 $function = $this->varValue('function');
-$link = $this->varValue('link') ? $this->extraValue('link') : false;
+$link = $this->varValue('link') ? $this->extraValue('link') : null;
 $name = $this->varValue('name');
 $text = $this->extraValue('text');
 ?>
-<? if ($this->getIsPrevEqual()): ?>
-<ul class="list-unstyled">
+<? if (!$this->getIsPrevEqual()): ?>
+<div class="row">
 <? endif ?>
-    <li class="media mb-5">
-        <?= $link != false ? '<a href="' . $link->link . '">' : ''; ?>
+    <div class="col-sm-12 col-md-4 col-lg-3 border-bottom-1 mb-3">
+        <?= $link != null ? '<a href="' . $link->link . '">' : ''; ?>
         <img class="mr-2 img-thumbnail" src="<?= $image ?>" alt="<?= $name ?>">
-        <?= $link != false ? '</a>' : ''; ?>
-        <div class="media-body">
-            <h3 class="mt-0 mb-3"><?= $name ?></h3>
-            <p class="lead"><?= $function ?></p>
-            <?= $text ?>
-        </div>
-    </li>
-<? if ($this->getIsNextEqual()): ?>
-</ul>
+        <?= $link != null ? '</a>' : ''; ?>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-9 mb-3">
+        <h3 class="mt-0 mb-3"><?= $name ?></h3>
+        <p class="lead"><?= $function ?></p>
+        <?= $text ?>
+        <?= $link != null ? '<button type="button" class="btn btn-primary mt-3"><a style="color: inherit;text-decoration: none" href="' . $link->link . '"><i class="fas fa-user"></i> Profile</a></button>' : ''; ?>
+    </div>
+<? if (!$this->getIsNextEqual()): ?>
+</div>
 <? endif ?>
 
