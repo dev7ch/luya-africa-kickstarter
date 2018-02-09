@@ -66,7 +66,7 @@ module.exports = {
             "dist/{env}/css/": ['scss/**/*.scss']
         },
         js: {
-            "dist/{env}/js/main.min.js": ['node_modules/scrollreveal/dist/scrollreveal.js','js/**/*.js']
+            "dist/{env}/js/main.min.js": ['node_modules/scrollreveal/dist/scrollreveal.min.js','js/**/*.js']
         },
         images: {
             "public_html/images/": 'public_html/images/*'
