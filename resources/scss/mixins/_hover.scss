@@ -4,19 +4,18 @@
         transition: background-color .25s ease-in, box-shadow .5s ease-out, border-color .35s ease-in-out;
         &:hover {
 
-            border-color: $info;
             background-color: lighten($info, 30);
 
             .card-img-top {
 
-                transition: transform .90s ease-out;
+                transition: transform 1.25s ease-out;
                 transform: scale(1.11) translateY(-5%);
             }
         }
 
         .card-img-top {
 
-            transition: transform .90s ease-out;
+            transition: transform 1.25s ease-in-out;
 
             &:hover {
                 transform: scale(1.11) translateY(-5%);

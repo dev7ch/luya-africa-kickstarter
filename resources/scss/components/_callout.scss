@@ -1,4 +1,17 @@
-.callout {}
+.callout-image {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    @include screen-min(md) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @include screen-min(lg) {
+        padding-top: 105px;
+        padding-bottom: 105px;
+    }
+}
 
 .callout-content {
     max-width: 720px;

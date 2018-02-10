@@ -4,14 +4,14 @@
         max-width: 100%;
     }
 
-    .card-group {
+    .card-deck, .card-group {
         .card {
-            border-color:lighten($info, 25) !important;
+            border-color:lighten($info, 25);
             background-color: lighten($info, 20);
-            @include hover(true);
+            @include hover(card);
 
             .card-footer {
-                background-color:lighten($info, 10) !important;
+                background-color:lighten($info, 10);
                 border-top: none;
             }
         }

@@ -5,6 +5,7 @@
 
     .card {
         visibility: hidden;
+        border-color:lighten($info, 25);
         background-color: lighten($info, 20);
         @include hover(card);
     }

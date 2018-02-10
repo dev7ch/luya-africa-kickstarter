@@ -34,14 +34,11 @@ $slides = $this->extraValue('slides');
                         </div>
                     </div>
                 <?php endforeach; ?>
-
-
-
                 <?= $this->appView->registerJs('
                         window.intro = ScrollReveal();
-                        intro.reveal(
-                        \'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
-      
+                        intro.reveal(\'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
+                        intro.reveal(\'.intro-slider-prev\', {origin:\'right\', reset: true, move:2, scale:.6, duration:600, delay:600});
+                        intro.reveal(\'.intro-slider-next\', {origin:\'left\', reset: true, move:2, scale:.3, duration:500, delay:580});
                         const IntroSlider = new Siema({
                             selector: \'.slider\',
                             duration: 200,
