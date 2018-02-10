@@ -21,11 +21,16 @@ $text = $this->varValue('text');
     <div class="callout-image" style="background-image: url('<?= $bgImage ?>')">
         <div class="container">
             <div class="callout-content p-3">
-                <h4><?= $title ?></h4>
-                <p><?= $text ?></p>
+                <h4 class="callout-title callout-inner"><?= $title ?></h4>
+                <p class="callout-text callout-inner"><?= $text ?></p>
             </div>
         </div>
     </div>
 <? endif; ?>
 
+<?= $this->appView->registerJs(
+    'sr.reveal(\' .callout-content\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:200});
+    sr.reveal(\' .callout-inner\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:400}, 200);
+     ',
+    \yii\web\View::POS_LOAD); ?>
 
