@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "50311875a5679883717bf02fe47d0856",
+    "content-hash": "2f0c7dcbe91f96ee45b9c779c7fca8f3",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -432,74 +432,6 @@
                 "image processing"
             ],
             "time": "2015-09-19T16:54:05+00:00"
-        },
-        {
-            "name": "luyadev/luya-bootstrap4",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/luyadev/luya-bootstrap4.git",
-                "reference": "a4a536499f0a0174264c28eebe3a05a000f72a06"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/luyadev/luya-bootstrap4/zipball/a4a536499f0a0174264c28eebe3a05a000f72a06",
-                "reference": "a4a536499f0a0174264c28eebe3a05a000f72a06",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "^2.0@dev"
-            },
-            "require-dev": {
-                "luyadev/luya-testsuite": "~1.0.0"
-            },
-            "type": "luya-extension",
-            "extra": {
-                "luya": {
-                    "blocks": [
-                        "src/blocks"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                },
-                "asset-pattern-skip-version": "(-build|-patch)",
-                "asset-installer-paths": {
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "luya\\bootstrap4\\": "src/",
-                    "luya\\bootstrap4\\tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Basil",
-                    "email": "git@nadar.io",
-                    "homepage": "https://github.com/nadar"
-                }
-            ],
-            "description": "Bootstrap4 Assets and Helper classes like ActiveForm for LUYA and Yii2.",
-            "homepage": "http://luya.io",
-            "keywords": [
-                "assets",
-                "bootstrap",
-                "bootstrap4",
-                "cms",
-                "luya",
-                "luya-module",
-                "module",
-                "php",
-                "twbs4",
-                "yii2"
-            ],
-            "time": "2018-01-31 12:41:49"
         },
         {
             "name": "luyadev/luya-composer",
@@ -4852,9 +4784,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "luyadev/luya-bootstrap4": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
