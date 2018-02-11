@@ -30,7 +30,7 @@ $text = $this->varValue('text');
 
 <?= $this->appView->registerJs(
     'sr.reveal(\' .callout-content\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:200});
-    sr.reveal(\' .callout-inner\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:400}, 200);
+    sr.reveal(\' .callout-inner\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:400});
      ',
     \yii\web\View::POS_LOAD);
 ?>
