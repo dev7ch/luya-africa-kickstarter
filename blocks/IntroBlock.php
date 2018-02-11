@@ -110,21 +110,23 @@ class IntroBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Intro Block</h5>' .
+        return '<h1 class="mb-3">Intro Block</h1>' .
             '{% if vars.bgImage is not empty %}' .
             '<img src="{{extras.bgImageAdmin.source}}" alt="none">' .
             '{% endif %}'.
+            '{% if vars.text is not empty %}' .
+            '<p>{{extras.text}}</p>' .
+            '{% else %}'.
+            '<p>The intro text is empty, click here to add new.</p>' .
+            '{% endif %}'.
             '{% if vars.slider is not empty %}' .
-            '<h6>Slider</h6>' .
+            '<h3 class="my-3"><b>Slider Contents</b></h3>' .
             '{%for slide in extras.slides%}' .
             '<hr><img style="max-width:200px; display: block" src="{{slide.image.source}}" alt="slide">' .
             '<b class="my-2">{{ slide.title}}</b>' .
             '<p>{{ slide.text }}</p>' .
             '<cite class="my-2">Link: <br />{{slide.link.link}}</cite>'.
             '{% endfor %}'.
-            '{% endif %}'.
-            '{% if vars.text is not empty %}' .
-            '<hr><b class="my-2">Intro Text:</b> <br />{{vars.text}}' .
             '{% endif %}';
     }
 }

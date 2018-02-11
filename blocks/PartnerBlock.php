@@ -44,7 +44,7 @@ class PartnerBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'company'; // see the list of icons on: https://design.google.com/icons/
+        return 'business'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**
@@ -92,7 +92,13 @@ class PartnerBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Partner Block</h5>' .
+        return
+            '{% if vars.name is not empty %}' .
+            '<h1 class="mb-3">{{vars.name}}</h1>' .
+            '{% else %}'.
+            '<h1 class="mb-3">Add team new member</h1>' .
+            '{% endif %}'.
+            '{% if vars.image is not empty %}' .
             '<table class="table table-bordered">' .
             '{% if vars.name is not empty %}' .
             '<tr><td><b>Name</b></td><td>{{vars.name}}</td></tr>' .

@@ -44,7 +44,7 @@ class CalloutBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'chat_bubble'; // see the list of icons on: https://design.google.com/icons/
+        return 'chat'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**

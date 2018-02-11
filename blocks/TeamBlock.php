@@ -45,7 +45,7 @@ class TeamBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'art_track'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**
@@ -111,12 +111,14 @@ class TeamBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Team Block</h5>' .
+        return
+            '{% if vars.name is not empty %}' .
+            '<h1 class="mb-3">{{vars.name}}</h1>' .
+            '{% else %}'.
+            '<h1 class="mb-3">Add team new member</h1>' .
+            '{% endif %}'.
             '{% if vars.image is not empty %}' .
             '<img class="img-thumbnail d-block mb-2" style="max-width:150px;" src="{{extras.image.source}}" alt="none">' .
-            '{% endif %}'.
-            '{% if vars.name is not empty %}' .
-            '<b class="inline">Name: </b>{{vars.name}}<br/>' .
             '{% endif %}'.
             '{% if vars.function is not empty %}' .
             '<b class="inline">Function: </b>{{vars.function}}' .

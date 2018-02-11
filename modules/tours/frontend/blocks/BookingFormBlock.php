@@ -50,7 +50,7 @@ class BookingFormBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'card_travel'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**

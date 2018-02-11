@@ -57,7 +57,7 @@ class CarouselBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'beach_access'; // see the list of icons on: https://design.google.com/icons/
+        return 'view_carousel'; // see the list of icons on: https://design.google.com/icons/
     }
 
     /**

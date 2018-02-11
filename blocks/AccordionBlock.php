@@ -50,7 +50,7 @@ class AccordionBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'view_day'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**
