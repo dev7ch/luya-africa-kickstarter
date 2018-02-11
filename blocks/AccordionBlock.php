@@ -78,9 +78,11 @@ class AccordionBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Accordion Block</h5>' .
+        return
             '{% if vars.title is not empty %}' .
-            '<b>Title</b>{{vars.title}}' .
+            '<h1 class="mb-3">{{vars.title}}</h1>' .
+            '{% else %}' .
+            '<h1 class="mb-3">Accordion Block</h1>' .
             '{% endif %}'.
             '{% if vars.icon is not empty %}' .
             '<b>Icon</b><i class="material-icons">{{vars.icon}}</i>' .

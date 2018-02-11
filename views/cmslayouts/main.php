@@ -4,15 +4,15 @@
         <?= $placeholders['intro']; ?>
     </section>
 <? endif; ?>
-<? $img = false; foreach (Yii::$app->menu->findAll(['container' => 'default']) as $prop) {
-    if ($prop->getProperty('bgImage') !== false) {
-        $img = $prop->getProperty('bgImage');
-        $bgImage = Yii::$app->storage->getImagesArrayItem($img);
+<?  /* Enable individual main background images selection in admin cms for each page */
+    $img = null;
+    $bgImage = null;
+    if (!empty(Yii::$app->menu->current->getPropertyValue('bgImage'))) {
+        $img = Yii::$app->menu->current->getPropertyValue('bgImage');
+        $bgImage = Yii::$app->storage->getImage($img)->source;
     }
-}
 ?>
-
-<section class="main py-5" style="background-image: url('<?= $img != false ? $bgImage : '' ?>');">
+<section class="main py-5" style="background-image: url('<?= $img !== null ? $bgImage : '' ?>');">
     <div class="container">
         <?= $placeholders['content']; ?>
     </div>
