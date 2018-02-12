@@ -96,25 +96,19 @@ class PartnerBlock extends PhpBlock
             '{% if vars.name is not empty %}' .
             '<h1 class="mb-3">{{vars.name}}</h1>' .
             '{% else %}'.
-            '<h1 class="mb-3">Add team new member</h1>' .
-            '{% endif %}'.
-            '{% if vars.image is not empty %}' .
-            '<table class="table table-bordered">' .
-            '{% if vars.name is not empty %}' .
-            '<tr><td><b>Name</b></td><td>{{vars.name}}</td></tr>' .
+            '<h1 class="mb-3">Add new business partner</h1>' .
             '{% endif %}'.
             '{% if vars.logo is not empty %}' .
-            '<tr><td><b>Logo</b></td><td>{{vars.logo}}</td></tr>' .
+            '<img class="img-fluid" src="{{extras.logo.source}}">' .
             '{% endif %}'.
             '{% if vars.link is not empty %}' .
-            '<tr><td><b>Link</b></td><td>{{vars.link}}</td></tr>' .
+            '<b>Link: </b>{{extras.link.href}}' .
             '{% endif %}'.
             '{% if cfgs.size is not empty %}' .
-            '<tr><td><b>Size</b></td><td>{{cfgs.size}}</td></tr>' .
+            '<b>Size: </b>{{cfgs.size}}' .
             '{% endif %}'.
             '{% if cfgs.style is not empty %}' .
-            '<tr><td><b>Style</b></td><td>{{cfgs.style}}</td></tr>' .
-            '{% endif %}'.
-            '</table>';
+            '<b>Style: </b>>{{cfgs.style}}' .
+            '{% endif %}';
     }
 }
