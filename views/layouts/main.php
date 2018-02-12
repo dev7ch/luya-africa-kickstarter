@@ -15,6 +15,16 @@ $query = new \yii\db\Query();
 $theme = $query->select('id, site_name, company_email, logo')->from('theme')->one();
 
 $this->beginPage();
+
+/* Enable individual main background images selection in admin cms for each page */
+$bgImage = null;
+
+if (Yii::$app->menu->current->getPropertyValue('bg')) {
+    $bgImage = null;
+    $img = Yii::$app->menu->current->getPropertyValue('bg');
+    $bgImage = Yii::$app->storage->getImage($img)->source;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->composition->language; ?>">
@@ -61,7 +71,7 @@ $this->beginPage();
                 </nav>
             </div>
         </header>
-        <div class="page-content">
+        <div class="page-content<?= $bgImage !== null ? ' page-content-background" style="background-image: url(\'' . $bgImage . '\');"' : '"'; ?>>
             <?= $content; ?>
         </div>
         <section class="breadcrumbs-wrapper bg-info">

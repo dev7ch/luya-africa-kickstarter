@@ -4,18 +4,8 @@
         <?= $placeholders['intro']; ?>
     </section>
 <? endif; ?>
-<?  /* Enable individual main background images selection in admin cms for each page */
-    $bgImage = null;
-    $img = null;
 
-    if (Yii::$app->menu->current->getPropertyValue('bg')) {
-        $bgImage = null;
-        $img = Yii::$app->menu->current->getPropertyValue('bg');
-        $bgImage = Yii::$app->storage->getImage($img)->source;
-    }
-
-?>
-<section class="main py-5" style="background-image: url('<?= $img !== null ? $bgImage : '' ?>');">
+<section class="main py-5">
     <div class="container">
 
         <?= $placeholders['content']; ?>
