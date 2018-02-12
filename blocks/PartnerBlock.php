@@ -75,7 +75,7 @@ class PartnerBlock extends PhpBlock
     public function extraVars()
     {
         return [
-            'logo' => BlockHelper::imageUpload($this->getVarValue('logo'), 'small-thumbnail', true),
+            'logo' => BlockHelper::imageUpload($this->getVarValue('logo'), 'logo', true),
             'link' => BlockHelper::linkObject($this->getVarValue('link')),
         ];
     }
