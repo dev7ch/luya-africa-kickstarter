@@ -45,7 +45,7 @@ class TeamBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'art_track'; // see the list of icons on: https://design.google.com/icons/
+        return 'account_box'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**

@@ -44,11 +44,19 @@
 .intro-text-with-bg {
 
     color: $white;
-    font-weight: 500;
     font-size: 22px;
     text-shadow:
     -1px -1px 0 $black,
     1px -1px 0 $black,
     -1px 1px 0 $black,
     1px 1px 0 $black;
+
+    #{headings(1,6)} {
+
+        margin-bottom: 0;
+
+        + p {
+            margin-top: 10px;
+        }
+    }
 }
