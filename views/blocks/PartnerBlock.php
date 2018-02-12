@@ -20,17 +20,17 @@ $link = $this->varValue('link') ? $this->extraValue('link') : '#';
 
 ?>
 <? if (!$this->getIsPrevEqual()): ?>
-<article class="partner">
+<article class="partner py-3">
     <div class="row md-auto">
 <? endif; ?>
-        <div class="col-lg-4 col-sm-6 col-xs-12">
+        <div class="col-xl-4 col-lg-3 col-sm-6 col-xs-12 col-12">
             <div class="row mb-3">
-                <div class="col-4 col-sm-4 col-md-3">
+                <div class="col-4 col-sm-6 col-md-5 col-6">
                     <a class="link" href="<?= $link ?>" target="_blank">
                         <img class="img-fluid" src="<?= $logo ?>" alt="<?= $name ?>">
                     </a>
                 </div>
-                <div class="col col-sm-8 col-md-9">
+                <div class="col-sm-6 col-md-7 col-6">
                     <h5 class="partner-title mb-0"><?= $name ?></h5>
                     <p class="small"><a class="link" href="<?= $link ?>" target="_blank"><?= $link ?></a></p>
                 </div>

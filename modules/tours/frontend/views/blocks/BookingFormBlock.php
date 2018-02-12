@@ -10,8 +10,7 @@ $model = $this->context->getExtraValue('model');
 ?>
 
 
-<div class="form-wrapper row">
-
+<div class="form-wrapper row py-5">
     <?php if (Yii::$app->session->getFlash('BookingFormBlockSuccess')): ?>
         <div class="alert alert-success">The form has been sent! Thank you.</div>
     <?php else: ?>
