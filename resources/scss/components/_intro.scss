@@ -1,18 +1,20 @@
 .intro {
-    min-height: 600px;
-    padding: 20px;
+    min-height: 120px;
     position: relative;
-
 }
 
 .intro-image {
-    min-height: 480px;
+    background-position: center;
+    background-size: cover;
+    &-slider {
+        min-height: 480px;
+    }
 }
 
 .intro-slider {
     visibility: hidden;
     position: absolute;
-    width: 300px;
+    width: 320px;
     max-width: 100%;
     left: 50%;
     top: 30%;
@@ -37,4 +39,16 @@
 
 }
 .intro-text-wrapper {
+}
+
+.intro-text-with-bg {
+
+    color: $white;
+    font-weight: 500;
+    font-size: 22px;
+    text-shadow:
+    -1px -1px 0 $black,
+    1px -1px 0 $black,
+    -1px 1px 0 $black,
+    1px 1px 0 $black;
 }
