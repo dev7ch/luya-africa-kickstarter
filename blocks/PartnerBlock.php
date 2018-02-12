@@ -63,7 +63,10 @@ class PartnerBlock extends PhpBlock
                      1 => 'Label for 1'
                  ])],
                  ['var' => 'style', 'label' => 'Style', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                     1 => 'Label for 1'
+                     'no' => 'No Spacing',
+                     'top' => 'Spacing top',
+                     'bottom' => 'Spacing bottom',
+                     'both' => 'Spacing top and bottom',
                  ])],
             ],
         ];

@@ -46,12 +46,11 @@ $tour = $this->context->getExtraValue('model');
                     onChange: () => {},
                 });
             ',
-            \yii\web\View::POS_READY);
+            \yii\web\View::POS_LOAD);
         ?>
         <?= $this->appView->registerJs(
-                'sr.reveal(\' .card\', {reset:false,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);
-                ',
-        \yii\web\View::POS_LOAD); ?>
+                'sr.reveal(\' .card\', {reset:false,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);',
+        \yii\web\View::POS_READY); ?>
     </div>
 </div>
 

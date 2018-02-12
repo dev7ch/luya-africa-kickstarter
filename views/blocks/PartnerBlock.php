@@ -17,10 +17,25 @@
 $name = $this->varValue('name');
 $logo = $this->varValue('logo') ? $this->extraValue('logo')->source : '';
 $link = $this->varValue('link') ? $this->extraValue('link') : '#';
+$style = $this->cfgValue('style') ? $this->cfgValue('style') : null;
+
+switch ($style) {
+    case 'top':
+        $style = ' pt-5';
+        break;
+    case 'bottom':
+        $style = ' pb-5';
+        break;
+    case 'both';
+        $style = ' py-5';
+        break;
+    default:
+        break;
+}
 
 ?>
 <? if (!$this->getIsPrevEqual()): ?>
-<article class="partner py-3">
+<article class="partner<?= $style ?>">
     <div class="row md-auto">
 <? endif; ?>
         <div class="col-xl-4 col-lg-3 col-sm-6 col-xs-12 col-12">

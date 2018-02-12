@@ -17,7 +17,7 @@
                         <a style="color: inherit; text-decoration: inherit" href="<?= $item->link ?>">Tour Info</a>
                     </button>
                     <button type="button" class="btn btn-outline-light">
-                        <a style="color: inherit; text-decoration: none !important;" href="<?= $item->link ?>"><i class="fas fa-calendar-alt"></i> Booking</a>
+                        <a style="color: inherit; text-decoration: none !important;" href="<?= $item->link ?>#booking-form"><i class="fas fa-calendar-alt"></i> Booking</a>
                     </button>
                 </div>
             <? endif; ?>
