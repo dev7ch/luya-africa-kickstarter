@@ -25,8 +25,8 @@ class LogoFilter extends Filter
     {
         return [
             [self::EFFECT_THUMBNAIL, [
-                'width' => '200',
-                'height' => '100',
+                'width' => '240',
+                'height' => '160',
             ]],
         ];
     }
