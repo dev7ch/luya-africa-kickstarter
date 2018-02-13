@@ -71,7 +71,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                 </nav>
             </div>
         </header>
-        <div class="page-content<?= $bgImage !== null ? ' page-content-background" style="background-image: url(\'' . $bgImage . '\');"' : '"'; ?>>
+        <div class="page-content<?= $bgImage !== null ? ' page-content-background" style="background-image: url(\'' . $bgImage . '\');' : ''; ?>">
             <?= $content; ?>
         </div>
         <section class="breadcrumbs-wrapper bg-info">
