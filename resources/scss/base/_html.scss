@@ -2,3 +2,18 @@ html, body {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
 }
+
+div.required label.control-label:after {
+    content: " *";
+    color: $danger;
+}
+
+form {
+
+    .help-block {
+        color: $danger;
+        position: absolute;
+        font-size: 11px;
+        bottom: 0;
+    }
+}

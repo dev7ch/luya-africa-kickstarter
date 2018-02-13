@@ -85,10 +85,10 @@ class Booking extends NgRestModel
     public function rules()
     {
         return [
-            [['first_name'], 'required'],
-            [['last_name', 'message', 'ip', 'date', 'booked_tour'], 'safe'],
+            [['first_name', 'last_name', 'email'], 'required'],
+            [['message', 'ip', 'date', 'booked_tour'], 'safe'],
             [['is_confirmed'], 'integer'],
-            [['first_name', 'phone', 'email'], 'string', 'max' => 255],
+            [['first_name', 'first_last', 'phone', 'email'], 'string', 'max' => 255],
         ];
     }
 

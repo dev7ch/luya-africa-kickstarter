@@ -25,11 +25,20 @@ $model = $this->context->getExtraValue('model');
             <div class="col-sm-6">
                 <?= $form->field($model, 'last_name')->textInput() ?>
             </div>
+            <div class="col-12">
+                <?= $form->field($model, 'email')->textInput() ?>
+            </div>
+            <div class="col-12">
+                <?= $form->field($model, 'phone')->textInput() ?>
+            </div>
+            <div class="col-12">
+                <?= $form->field($model, 'message')->textarea() ?>
+            </div>
+            <div class="col-12">
+                <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
+                <?= Html::button('Clear Form', ['class' => 'btn btn-outline-primary', 'onclick' => 'document.getElementById("booking-form").reset();']) ?>
+            </div>
         </div>
-        <?= $form->field($model, 'email')->textInput() ?>
-        <?= $form->field($model, 'phone')->textInput() ?>
-        <?= $form->field($model, 'message')->textarea() ?>
-        <?= Html::submitButton('Submit', ['class' => 'btn btn-outline-primary']) ?>
         <?php ActiveForm::end(); ?>
     <?php endif; ?>
 </div>
