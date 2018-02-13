@@ -81,7 +81,7 @@ class CalloutBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Callout Block</h5>' .
+        return '<h3 class="mb-0 bg-secondary p-2 rounded text-light"><b>Callout Block</b><i class="material-icons float-right">' . $this->icon() . '</i></h3><hr class="mb-2">' .
             '<table class="table table-bordered">' .
             '{% if vars.title is not empty %}' .
             '<tr><td><b>Title</b></td><td>{{vars.title}}</td></tr>' .

@@ -110,7 +110,7 @@ class IntroBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h1 class="mb-3">Intro Block</h1>' .
+        return '<h3 class="mb-0 bg-secondary p-2 rounded text-light"><b>Intro Block</b><i class="material-icons float-right">' . $this->icon() . '</i></h3><hr class="mb-2">' .
             '{% if vars.bgImage is not empty %}' .
             '<img src="{{extras.bgImageAdmin.source}}" alt="none">' .
             '{% endif %}'.
