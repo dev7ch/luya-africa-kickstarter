@@ -54,11 +54,4 @@ class BookingForm extends \luya\admin\ngrest\base\NgRestModel
         return $mail;
     }
 
-    public function scenarios()
-    {
-        $scenarios = parent::scenarios();
-        $scenarios['restcreate'] = ['first_name','last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed', 'email'];
-        $scenarios['restupdate'] = ['first_name','last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed', 'email'];
-        return $scenarios;
-    }
 }
