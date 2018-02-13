@@ -15,6 +15,7 @@ use luya\admin\ngrest\base\NgRestModel;
  * @property string $last_name
  * @property string $phone
  * @property string $email
+ * @property string $booked_tour
  * @property string $message
  * @property string $ip
  * @property string $date
@@ -45,10 +46,28 @@ class Booking extends NgRestModel
     /**
      * @inheritdoc
      */
+    public function ngRestListOrder()
+    {
+        return ['date' => SORT_ASC];
+    }
+
+    /**
+     * @inheritdoc
+     */
+
+    public function ngRestGroupByField()
+    {
+        return 'booked_tour';
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels()
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'booked_tour' => Yii::t('app', 'Tour'),
             'first_name' => Yii::t('app', 'First Name'),
             'last_name' => Yii::t('app', 'Last Name'),
             'phone' => Yii::t('app', 'Phone'),
@@ -67,7 +86,7 @@ class Booking extends NgRestModel
     {
         return [
             [['first_name'], 'required'],
-            [['last_name', 'message', 'ip', 'date'], 'safe'],
+            [['last_name', 'message', 'ip', 'date', 'booked_tour'], 'safe'],
             [['is_confirmed'], 'integer'],
             [['first_name', 'phone', 'email'], 'string', 'max' => 255],
         ];
@@ -78,7 +97,7 @@ class Booking extends NgRestModel
      */
     public function genericSearchFields()
     {
-        return ['first_name', 'last_name', 'phone', 'email', 'message', 'ip', 'date'];
+        return ['first_name', 'last_name', 'phone', 'email', 'message', 'ip', 'date', 'booked_tour'];
     }
 
     /**
@@ -87,6 +106,7 @@ class Booking extends NgRestModel
     public function ngRestAttributeTypes()
     {
         return [
+            'booked_tour' => 'text',
             'first_name' => 'text',
             'last_name' => 'text',
             'phone' => 'text',
@@ -104,8 +124,8 @@ class Booking extends NgRestModel
     public function ngRestScopes()
     {
         return [
-            ['list', ['first_name', 'last_name', 'phone', 'email', 'message', 'ip', 'date', 'is_confirmed']],
-            [['create', 'update'], ['first_name', 'last_name', 'phone', 'email', 'message', 'ip', 'date', 'is_confirmed']],
+            ['list', ['booked_tour', 'first_name', 'last_name', 'email', 'date', 'is_confirmed']],
+            [['create', 'update'], ['booked_tour','first_name', 'last_name', 'phone', 'email', 'message', 'ip', 'date', 'is_confirmed']],
             ['delete', true],
         ];
     }

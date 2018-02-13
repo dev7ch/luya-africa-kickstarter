@@ -27,7 +27,7 @@ class BookingForm extends \luya\admin\ngrest\base\NgRestModel
         return 'api-tours-booking';
     }
 
-    public $verifyCode;
+    //public $verifyCode;
 
     public function rules()
     {
@@ -35,7 +35,7 @@ class BookingForm extends \luya\admin\ngrest\base\NgRestModel
             [['first_name', 'email'], 'required'],
             [['email'], 'email'],
             /*['verifyCode', 'captcha', 'captchaAction'=>'site/index'],*/
-            [['last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed'],'safe']
+            [['last_name', 'phone', 'message', 'ip', 'date', 'is_confirmed', 'booked_tour'],'safe']
 
         ];
     }

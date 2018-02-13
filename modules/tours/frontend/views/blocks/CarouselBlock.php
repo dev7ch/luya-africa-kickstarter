@@ -8,7 +8,6 @@
 * @var $this \luya\cms\base\PhpBlockView
 */
 
-
 $tour = $this->context->getExtraValue('model');
 ?>
 
