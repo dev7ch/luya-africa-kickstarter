@@ -111,7 +111,7 @@ class PartnerBlock extends PhpBlock
             '<b>Size: </b>{{cfgs.size}}' .
             '{% endif %}'.
             '{% if cfgs.style is not empty %}' .
-            '<b>Style: </b>>{{cfgs.style}}' .
+            '<b>Style: </b>{{cfgs.style}}' .
             '{% endif %}';
     }
 }
