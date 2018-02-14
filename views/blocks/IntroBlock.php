@@ -26,7 +26,7 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
                         <div class="slider-image" <?= $slide['image'] != null ? ' style="background-image: url(\'' . str_replace(' ', '/',($slide['image']->source)) . '\')"' : ''; ?>>
                             <div class="slider-content">
                                 <h1 class="slider-title"><?= $slide['title'] ?></h1>
-                                <span class="slider-text m-0"><?= $slide['text'] ?></span>
+                                <div class="slider-text m-0"><?= $slide['text'] ?></div>
                                 <? if ($slide['link'] != null): ?>
                                     <button type="button" class="btn btn-primary">
                                         <a class="slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit">Info</a>

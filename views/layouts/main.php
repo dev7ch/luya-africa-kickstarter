@@ -33,15 +33,17 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta property="og:title" content="LUYA - Build any system" />
-        <meta property="og:image" content="<?= $this->publicHtml ?>/images/logo/2x/luya_logo@2x-100.jpg" />
+        <meta property="og:title" content="Africa - Kickstart your travel Agency" />
+        <meta property="og:image" content="<?= $this->publicHtml ?>/images/og_image.jpg" />
         <meta property=“og:type“ content=“website“/>
-        <link rel="apple-touch-icon" sizes="180x180" href="<?= $this->publicHtml ?>/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?= $this->publicHtml ?>/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?= $this->publicHtml ?>/favicon/favicon-16x16.png">
-        <link rel="manifest" href="<?= $this->publicHtml ?>/favicon/manifest.json">
-        <link rel="mask-icon" href="<?= $this->publicHtml ?>/favicon/safari-pinned-tab.svg" color="#A50045">
-        <meta name="theme-color" content="#a04c3c">
+        <meta property=“og:url“ content=“<?= Yii::$app->request->absoluteUrl ?>“/>
+        <link rel="apple-touch-icon" sizes="180x180" href="<?= $this->publicHtml ?>/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?= $this->publicHtml ?>/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?= $this->publicHtml ?>/favicon-16x16.png">
+        <link rel="manifest" href="<?= $this->publicHtml ?>/site.webmanifest">
+        <link rel="mask-icon" href="<?= $this->publicHtml ?>/safari-pinned-tab.svg" color="#af7751">
+        <meta name="msapplication-TileColor" content="#dfcfc4">
+        <meta name="theme-color" content="#ba9880">
         <title><?= $theme['site_name'] ? $theme['site_name'] : $this->title; ?></title>
         <?php $this->head() ?>
     </head>
@@ -56,10 +58,10 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                         <?= $theme['logo'] ? '<img class="logo" src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('logo')->source . '" alt="' . $this->title . '">' : ''; ?>
                         <?= $theme['site_name'] ? $theme['site_name'] : 'Jabbula' ?>
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="mainnav">
+                    <div id="mainnav" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav ml-auto">
                             <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
                                 <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
