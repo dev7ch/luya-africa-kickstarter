@@ -82,7 +82,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                     <nav class="breadcrumbs small" aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent m-0">
                             <li class="breadcrumb-item text-link">
-                                <a class="link text-light" href="<?= $this->publicHtml ?>/">Home</i></a>
+                                <a class="link text-light" href="<?= $this->publicHtml ?>/"><i class="fas fa-home"></i></a>
                             </li>
                             <?php foreach (Yii::$app->menu->current->teardown as $item): /* @var $item \luya\cms\menu\Item */ ?>
                                 <li class="breadcrumb-item<?= $item->link == Yii::$app->menu->current ? ' active' : ''; ?>">
