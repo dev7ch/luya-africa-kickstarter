@@ -17,8 +17,7 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
 
 ?>
 
-<div class="<?= $slides !== false ? 'intro-image-slider ' : 'intro-image ' ?>py-5"
-     style="background-image: url('<?= $bgImage ?>');" xmlns="http://www.w3.org/1999/html">
+<div class="<?= $slides !== false ? 'intro-image-slider ' : 'intro-image ' ?>py-5" style="background-image: url('<?= $bgImage ?>');">
     <div class="container">
         <? if ($slides !== false): ?>
             <div class="intro-slider">
