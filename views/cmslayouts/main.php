@@ -1,13 +1,12 @@
 
 <? if (!empty($placeholders['intro'])): ?>
-    <section class="intro p-0">
+    <div class="intro p-0">
         <?= $placeholders['intro']; ?>
-    </section>
+    </div>
 <? endif; ?>
 
 <section class="main py-5">
     <div class="container">
-
         <?= $placeholders['content']; ?>
     </div>
 </section>

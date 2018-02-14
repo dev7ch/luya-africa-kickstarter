@@ -53,7 +53,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
     <div class="page">
         <header class="nav-container page-header bg-light m-b-3">
             <div class="container px-0">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="<?= $this->publicHtml ?>/">
                         <?= $theme['logo'] ? '<img class="logo" src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('logo')->source . '" alt="' . $this->title . '">' : ''; ?>
                         <?= $theme['site_name'] ? $theme['site_name'] : 'Jabbula' ?>
@@ -76,7 +76,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
         <div class="page-content<?= $bgImage !== null ? ' page-content-background" style="background-image: url(\'' . $bgImage . '\');' : ''; ?>">
             <?= $content; ?>
         </div>
-        <section class="breadcrumbs-wrapper bg-info">
+        <nav class="breadcrumbs-wrapper bg-info">
             <div class="container">
                 <? if(Yii::$app->menu->current != Yii::$app->getHomeUrl()): ?>
                     <nav class="breadcrumbs small" aria-label="breadcrumb">
@@ -93,7 +93,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                     </nav>
                 <? endif; ?>
             </div>
-        </section>
+        </nav>
         <footer class="footer page-footer">
             <div class="container">
                 <ul class="nav nav-pills d-inline-flex">
@@ -107,7 +107,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                         <a class="nav-link text-light" href="#"><i class="fab fa-youtube"></i></a>
                     </li>
                 </ul>
-                <nav class="footernav float-sm-right" role="navigation">
+                <nav class="footernav float-sm-right">
                     <ul class="nav nav-pills">
                     <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'footernav']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
                         <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">

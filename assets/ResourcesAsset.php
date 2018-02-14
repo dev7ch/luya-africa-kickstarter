@@ -10,7 +10,7 @@ class ResourcesAsset extends \luya\web\Asset
     public $sourcePath = '@app/resources/dist';
     
     public $css = [
-        '//fonts.googleapis.com/css?family=Open+Sans:300,400|Slabo+27px',
+        '//fonts.googleapis.com/css?family=Open+Sans:300,400%7CSlabo+27px',
         YII_ENV . '/css/main.css'
     ];
 

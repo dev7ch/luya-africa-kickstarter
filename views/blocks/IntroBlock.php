@@ -17,23 +17,24 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
 
 ?>
 
-<div class="<?= $slides !== false ? 'intro-image-slider ' : 'intro-image ' ?>py-5" style="background-image: url('<?= $bgImage ?>');">
+<div class="<?= $slides !== false ? 'intro-image-slider ' : 'intro-image ' ?>py-5"
+     style="background-image: url('<?= $bgImage ?>');" xmlns="http://www.w3.org/1999/html">
     <div class="container">
         <? if ($slides !== false): ?>
             <div class="intro-slider">
                 <div class="slider">
                     <?php foreach ($slides as $slide): ?>
-                        <div class="slider-image" <?= $slide['image'] != null ? ' style="background-image: url(\'' . str_replace(' ', '/',($slide['image']->source)) . '\')"' : ''; ?>>
-                            <div class="slider-content">
-                                <h1 class="slider-title"><?= $slide['title'] ?></h1>
-                                <div class="slider-text m-0"><?= $slide['text'] ?></div>
+                        <div  class="slider-image" <?= $slide['image'] != null ? ' style="background-image: url(\'' . str_replace(' ', '/',($slide['image']->source)) . '\')"' : ''; ?>>
+                            <article class="slider-content" itemscope itemtype="http://schema.org/Article">
+                                <h3 itemprop="articleHeadline" class="slider-title"><?= $slide['title'] ?></h3>
+                                <div itemprop="articleBody" class="slider-text m-0"><?= $slide['text'] ?></div>
                                 <? if ($slide['link'] != null): ?>
                                     <button type="button" class="btn btn-primary">
-                                        <a class="slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit">Info</a>
+                                        <a itemprop="url" class="slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit">Info</a>
                                     </button>
                                 <? endif; ?>
-                            </div>
-                        </div>
+                            </article>
+                        </div> <!-- css bg image end -->
                     <?php endforeach; ?>
                     <?= $this->appView->registerJs('
                             const IntroSlider = new Siema({
