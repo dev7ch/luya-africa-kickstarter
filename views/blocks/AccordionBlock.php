@@ -22,13 +22,13 @@ $item = $this->placeholderValue('item');
 <div id="accordion-<?= $id['block_id']; ?>" class="py-5">
 <? endif; ?>
     <div class="card bg-light border-0 rounded-0">
-        <button type="button" class="btn btn-info p-0 m-0 text-left text-light" data-toggle="collapse" data-target="#collapse-<?= $itemId; ?>" aria-expanded="true" aria-controls="collapse-<?= $itemId ?>">
+        <div class="btn btn-info p-0 m-0 text-left text-light d-block" data-toggle="collapse" data-target="#collapse-<?= $itemId; ?>" aria-expanded="true" aria-controls="collapse-<?= $itemId ?>">
             <div class="card-header" id="heading-<?= $itemId ?>">
                 <h4 class="mb-0 accordion-title">
                         <?= $title ?>
                 </h4>
             </div>
-        </button>
+        </div>
         <div id="collapse-<?= $itemId ?>" class="collapse<?= !$this->getIsPrevEqual() ? ' show' : '' ?>" aria-labelledby="heading-<?= $itemId; ?>" data-parent="#accordion-<?= $id['block_id'] ?>">
             <div class="card-body">
                 <?= $item ?>

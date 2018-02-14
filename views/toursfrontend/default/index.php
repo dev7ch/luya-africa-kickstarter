@@ -13,12 +13,8 @@
             </div>
             <? if (!empty($item->link)):?>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary">
-                        <a style="color: inherit; text-decoration: inherit" href="<?= $item->link ?>">Tour Info</a>
-                    </button>
-                    <button type="button" class="btn btn-outline-light">
-                        <a style="color: inherit; text-decoration: none !important;" href="<?= $item->link ?>#booking-form"><i class="fas fa-calendar-alt"></i> Booking</a>
-                    </button>
+                    <a class="btn btn-primary" href="<?= $item->link ?>">Tour Info</a>
+                    <a class="btn btn-outline-light" href="<?= $item->link ?>#booking-form"><i class="fas fa-calendar-alt"></i> Booking</a>
                 </div>
             <? endif; ?>
         </div>
