@@ -13,5 +13,5 @@ class ThemeController extends \luya\rest\ActiveController
      * @var string The path to the model which is the provider for the rules and fields.
      */
     public $modelClass = 'app\modules\theme\models\Theme';
-    public $enableCors = true;
+    public $enableCors = false;
 }

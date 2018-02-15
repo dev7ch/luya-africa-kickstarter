@@ -14,7 +14,7 @@ $tour = $this->context->getExtraValue('model');
 <div class="carousel-wrapper">
     <div class="carousel card-deck">
         <? foreach ($tour as $item):
-            $image = $item->image ? Yii::$app->storage->getImage($item->image)->applyFilter('medium-thumbnail')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+            $image = is_object($item->image) ? Yii::$app->storage->getImage($item->image)->applyFilter('medium-thumbnail')->source : 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
             $link = $item->link ? $item->link->link : '#';
 
             ?>

@@ -51,7 +51,6 @@ use luya\admin\helpers\Angular;
         $scope.data = {};
         $scope.submitInput = function($id)
         {
-            console.log($scope.data.id);
             if ($id > 0) {
                 $http.put('admin/api-theme-settings/update?id=' + $id, $scope.data).then(function(response) {
                     $window.location.reload();
