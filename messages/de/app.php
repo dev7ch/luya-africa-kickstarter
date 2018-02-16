@@ -1,7 +1,12 @@
 <?php
 
 return [
-    'kickstarter_success' => '<h1 class="alert-heading">Du bist bereit!</h1>
-    <p>Super, du hast es geschafft <i>LUYA</i> erfolgreich zu installieren. Du kannst dich nun in den Administrationsbereich einloggen um dort deine ersten Seiten erstellen.</p>',
-    'kickstarter_admin_link' => '<p><a href="{link}" class="btn btn-primary btn-lg btn-outline-light">zur Administration</a></p>',
+    'view' => 'Mehr erfahren',
+    'view_profile' => 'Profil anzeigen',
+    'view_tour' => 'Tour Info´s anzeigen',
+    'send' => 'Senden',
+    'send_message' => 'Nachricht senden',
+    'send_booking' => 'Buchungsanfrage senden',
+    'booking' => 'Buchung',
+    'form_clear' => 'Eingaben löschen',
 ];

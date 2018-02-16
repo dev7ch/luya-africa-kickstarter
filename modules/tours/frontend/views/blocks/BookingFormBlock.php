@@ -35,7 +35,7 @@ $model = $this->context->getExtraValue('model');
                 <?= $form->field($model, 'message')->textarea() ?>
             </div>
             <div class="col-12">
-                <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton(Yii::t('app', 'send_booking') , ['class' => 'btn btn-primary']) ?>
                 <?= Html::button('Clear Form', ['class' => 'btn btn-outline-primary', 'onclick' => 'document.getElementById("booking-form").reset();']) ?>
             </div>
         </div>

@@ -10,19 +10,19 @@ ResourcesAsset::register($this);
 /* @var $this luya\web\View */
 /* @var $content string */
 
+/* Load settings like logo etc from cms*/
 $query = new \yii\db\Query();
-
 $theme = $query->select('id, site_name, company_email, logo')->from('theme')->one();
 
 $this->beginPage();
 
-/* Enable individual main background images selection in admin cms for each page */
+/* Enable individual main background images selection in admin cms for each page, must be after beginPage() function */
 $bgImage = null;
 
 if (Yii::$app->menu->current->getPropertyValue('bg')) {
     $bgImage = null;
     $img = Yii::$app->menu->current->getPropertyValue('bg');
-    $bgImage = Yii::$app->storage->getImage($img)->source;
+    $bgImage = is_object(Yii::$app->storage->getImage($img)) ? Yii::$app->storage->getImage($img)->source : null;
 }
 
 ?>

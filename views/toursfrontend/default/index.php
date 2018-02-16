@@ -13,8 +13,8 @@
             </div>
             <? if (!empty($item->link)):?>
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="<?= $item->link ?>">Tour Info</a>
-                    <a class="btn btn-outline-light" href="<?= $item->link ?>#booking-form"><i class="fas fa-calendar-alt"></i> Booking</a>
+                    <a class="btn btn-primary" href="<?= $item->link ?>"><?= Yii::t('app', 'view_tour') ?></a>
+                    <a class="btn btn-outline-light" href="<?= $item->link ?>#booking-form"><i class="fas fa-calendar-alt"></i>&nbsp;<?= Yii::t('app', 'booking') ?></a>
                 </div>
             <? endif; ?>
         </div>

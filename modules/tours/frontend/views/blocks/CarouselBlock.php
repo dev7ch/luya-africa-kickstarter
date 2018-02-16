@@ -28,7 +28,7 @@ $tour = $this->context->getExtraValue('model');
 
                     <h4 class="card-title"><?= $item->title ?></h4>
                     <p class="card-text"><?= $item->text ?></p>
-                    <a href="<?= $link ?>" class="btn btn-primary">More</a>
+                    <a href="<?= $link ?>" class="btn btn-primary"><?= Yii::t('app', 'view_tour') ?></a>
                 </div>
             </div>
         <? endforeach; ?>

@@ -36,8 +36,8 @@ $text = $this->extraValue('text');
         <div class="team-content col-sm-12 col-md-8 col-lg-9 mb-5">
             <h3 class="mt-0 mb-3"><?= $name ?></h3>
             <p class="lead"><?= $function ?></p>
+            <?= $link != null ? '<button type="button" class="btn btn-primary mb-3"><a style="color:inherit;text-decoration: none" href="' . $link->link . '"><i class="fas fa-user"></i>&nbsp;' . Yii::t('app', 'view_profile') . '</a></button>' : ''; ?>
             <?= $text ?>
-            <?= $link != null ? '<button type="button" class="btn btn-primary mt-3"><a style="color:inherit;text-decoration: none" href="' . $link->link . '"><i class="fas fa-user"></i> Profile</a></button>' : ''; ?>
         </div>
     <? if (!$this->getIsNextEqual()): ?>
     </div>
