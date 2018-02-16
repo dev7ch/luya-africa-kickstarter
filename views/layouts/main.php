@@ -1,7 +1,6 @@
 <?php
 use app\assets\ResourcesAsset;
 use app\assets\HeadAsset;
-use luya\helpers\Url;
 use luya\cms\widgets\LangSwitcher;
 
 HeadAsset::register($this);

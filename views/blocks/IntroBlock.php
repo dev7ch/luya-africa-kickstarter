@@ -59,8 +59,8 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
                     <button type="button" class="intro-slider-next btn btn-link ml-auto"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <?= $this->appView->registerJs('        
-                            intro.reveal(\'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
-                            intro.reveal(\'.slider-nav\', {origin:\'right\', reset: true, scale:.6, delay:600});
+                            sr.reveal(\'.slider\', {origin:\'top\', reset: false, move:2, scale:1.3, duration:600});
+                            sr.reveal(\'.slider-nav\', {origin:\'right\', reset: true, scale:.6, delay:600});
                             ',
                     \yii\web\View::POS_LOAD); ?>
             </div>

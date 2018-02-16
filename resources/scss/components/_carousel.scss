@@ -1,6 +1,16 @@
 .carousel {
+
+    // Siema() slider generates parent div´s
+
+    > div > div {
+        display: flex;
+        transition: .25s min-height ease-in-out;
+    }
+
     &.card-deck {
+        display: flex;
         flex-flow: column nowrap;
+        align-items: stretch;
     }
 
     .card {
