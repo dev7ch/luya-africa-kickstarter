@@ -49,7 +49,6 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
     </head>
     <body>
     <?php $this->beginBody();?>
-
     <div class="page">
         <header class="nav-container page-header bg-light m-b-3">
             <div class="container px-0">
@@ -132,10 +131,12 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
             </div>
         </footer>
     </div>
-    <?= $this->registerJs('                
-        sr.reveal(\'.nav-lang\', {origin:\'left\', reset: true, move:2, scale:.6, delay:300, useDelay: \'once\', duration:300, distance: \'120px\', mobile: false});',
-        \yii\web\View::POS_LOAD); ?>
     <?php $this->endBody() ?>
     </body>
 </html>
+<? if(Yii::$app->menu->current == Yii::$app->getHomeUrl()) {
+    echo $this->registerJs('                
+            sr.reveal(\'.nav-lang\', {origin:\'left\', reset: true, move:2, scale:.6, delay:300, useDelay: \'once\', duration:300, distance: \'120px\', mobile: false});',
+        \yii\web\View::POS_LOAD);
+};?>
 <?php $this->endPage() ?>
