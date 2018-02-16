@@ -46,19 +46,12 @@ $tour = $this->context->getExtraValue('model');
                     multipleDrag: true,
                     threshold: 20,
                     loop: true,
-                    onInit: () => {
-                        sameHeight(\'.card\');   
-                    },
-                    onChange: () => {
-                        sameHeight(\'.card\');
-                    },
-                });
+                    onInit: () => {sameHeight(\'.card\');},
+                    onChange: () => {sameHeight(\'.card\');},
+                });sr.reveal(\'.card\', {origin:\'right\', reset:false, scale:1, duration: 800, delay:0}, 400);
             ',
-            \yii\web\View::POS_LOAD);
+            \yii\web\View::POS_READY);
         ?>
-        <?= $this->appView->registerJs(
-                'sr.reveal(\' .card\', {reset:false,move:0,scale:1, origin:\'right\', duration: 800, delay:0}, 400);',
-        \yii\web\View::POS_READY); ?>
     </div>
 </div>
 
