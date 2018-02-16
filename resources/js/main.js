@@ -1,8 +1,10 @@
 // make sure ScrollReveal is loaded before
 function Reveals() {
     "use strict";
-    window.sr = new ScrollReveal();
+    window.sr = ScrollReveal();
 }
+
+// Debouncing
 
 function debounce(func, wait, immediate) {
     "use strict";
@@ -51,6 +53,8 @@ function sameHeight($class) {
 
     window.addEventListener('resize', resizeDebounced);
 }
+
+// Execute site wide functions
 
 Reveals();
 
