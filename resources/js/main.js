@@ -1,7 +1,7 @@
 // make sure ScrollReveal is loaded before
 function Reveals() {
     "use strict";
-    window.sr = ScrollReveal();
+    window.sr = new ScrollReveal();
 }
 
 // Debouncing
