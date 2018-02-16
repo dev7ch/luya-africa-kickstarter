@@ -70,9 +70,9 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                             <?php endforeach; ?>
                         </ul>
                         <?= LangSwitcher::widget([
-                            'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
+                            'listElementOptions' => ['class' => 'nav nav-lang'],
                             'elementOptions' => ['class' => 'nav-item'],
-                            'linkOptions' => ['class' => 'nav-link'],
+                            'linkOptions' => ['class' => 'nav-link nav-lang-link'],
                             'linkLabel' => function ($lang) {
                                 switch ($lang['short_code']) {
                                     case 'en':
@@ -132,6 +132,9 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
             </div>
         </footer>
     </div>
+    <?= $this->registerJs('                
+        sr.reveal(\'.nav-lang\', {origin:\'left\', reset: true, move:2, scale:.6, delay:300, useDelay: \'once\', duration:300, distance: \'120px\', mobile: false});',
+        \yii\web\View::POS_LOAD); ?>
     <?php $this->endBody() ?>
     </body>
 </html>
