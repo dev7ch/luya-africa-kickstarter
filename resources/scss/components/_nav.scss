@@ -1,0 +1,24 @@
+// Take care, you are extending and overriding generic bs4 classes here
+
+
+.nav-lang {
+
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    background: $info;
+    top: $mainnav-height;
+    border-radius: $border-radius;
+    overflow: hidden;
+    visibility: visible;
+
+    @include screen-min(md) {
+        visibility: hidden;
+        top: calc(#{$mainnav-height} + 10px);
+
+    }
+}
+
+.nav-lang-link {
+        padding: 2px 5px;
+}
