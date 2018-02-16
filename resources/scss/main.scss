@@ -10,10 +10,14 @@
 
 @import "base/vars";
 
+// Import flag icons
+@import "../node_modules/flag-icon-css/sass/flag-icon";
+
 // Import general base elements
 
 @import "base/typo";
 @import "base/html";
+@import "base/global";
 
 // Mixins
 

@@ -69,6 +69,19 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+                        <?= LangSwitcher::widget([
+                            'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
+                            'elementOptions' => ['class' => 'nav-item'],
+                            'linkOptions' => ['class' => 'nav-link'],
+                            'linkLabel' => function ($lang) {
+                                switch ($lang['short_code']) {
+                                    case 'en':
+                                        $lang['short_code'] = 'gb';
+                                        break;
+                                }
+                                return '<span class="flag-icon flag-icon-' . $lang['short_code'] . '"></span>';
+                            }
+                        ]); ?>
                     </div>
                 </nav>
             </div>
