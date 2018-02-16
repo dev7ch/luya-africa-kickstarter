@@ -2,11 +2,11 @@
 
 
 .nav-lang {
-
     position: absolute;
-    right: 0;
+    left:50%;
+    border: 1px solid $mainnav-lang-active;
+    transform: translateX(-50%);
     margin-right: 20px;
-    background: $info;
     top: $mainnav-height;
     border-radius: $border-radius;
     overflow: hidden;
@@ -14,11 +14,17 @@
 
     @include screen-min(md) {
         visibility: hidden;
-        top: calc(#{$mainnav-height} + 10px);
-
+        top: 5px;
     }
 }
 
 .nav-lang-link {
-        padding: 2px 5px;
+    padding: 2px 5px;
+    line-height: 16px;
+
+    span.flag-icon {
+        width: 15px;
+        line-height: 1;
+        padding: 0;
+    }
 }

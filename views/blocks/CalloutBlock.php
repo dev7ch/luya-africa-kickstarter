@@ -29,8 +29,8 @@ $text = $this->varValue('text');
 <? endif; ?>
 
 <?= $this->getAppView()->registerJs(
-    'sr.reveal(\'.callout-content\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:200});
-    sr.reveal(\'.callout-inner\', {reset:true, move:0,scale:1, origin:\'right\', duration: 800, delay:400});',
-    \yii\web\View::POS_READY);
+    'sr.reveal(\'.callout-content\', {reset:true, move:0, scale:1, origin:\'right\', delay:200});
+    sr.reveal(\'.callout-inner\', {reset:true, move:0, scale:1, origin:\'right\', delay:400});',
+    \yii\web\View::POS_LOAD);
 ?>
 

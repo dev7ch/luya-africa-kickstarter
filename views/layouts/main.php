@@ -54,7 +54,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="<?= $this->publicHtml ?>/">
                         <?= $theme['logo'] ? '<img class="logo" src="' . Yii::$app->storage->getImage($theme['logo'])->applyFilter('logo')->source . '" alt="' . $this->title . '">' : ''; ?>
-                        <?= $theme['site_name'] ? $theme['site_name'] : 'Jabbula' ?>
+                        <?= $theme['site_name'] ? $theme['site_name'] : '' ?>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
