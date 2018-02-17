@@ -3,9 +3,8 @@
 
 .nav-lang {
     position: absolute;
-    left:50%;
+    right:5px;
     border: 1px solid $mainnav-lang-active;
-    transform: translateX(-50%);
     margin-right: 20px;
     top: $mainnav-height;
     border-radius: $border-radius;
@@ -14,7 +13,7 @@
 
     @include screen-min(md) {
         visibility: hidden;
-        top: 5px;
+        top: 3px;
     }
 }
 
