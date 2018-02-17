@@ -28,9 +28,7 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
                                 <h3 itemprop="articleHeadline" class="slider-title"><?= $slide['title'] ?></h3>
                                 <div itemprop="articleBody" class="slider-text m-0"><?= $slide['text'] ?></div>
                                 <? if ($slide['link'] != null): ?>
-                                    <button type="button" class="btn btn-primary">
-                                        <a itemprop="url" class="slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit"><?= Yii::t('app', 'view') ?></a>
-                                    </button>
+                                    <a type="button" itemprop="url" class="btn btn-primary slider-link d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit"><?= Yii::t('app', 'view') ?></a>
                                 <? endif; ?>
                             </article>
                         </div> <!-- css bg image end -->
