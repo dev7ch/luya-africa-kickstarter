@@ -12,7 +12,7 @@
  * @var $this \luya\cms\base\PhpBlockView
  */
 
-$id = (new \yii\db\Query())->select(['block_id'])->from('cms_nav_item_page_block_item')->where(['is_hidden' => '0'])->one();
+$id = $this->extraValue('id');
 $itemId = uniqid('item-');
 $title = $this->varValue('title');
 $item = $this->placeholderValue('item');

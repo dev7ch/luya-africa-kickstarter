@@ -75,6 +75,15 @@ class AccordionBlock extends PhpBlock
         ];
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function extraVars()
+    {
+        return [
+            'id' => (new \yii\db\Query())->select(['block_id'])->from('cms_nav_item_page_block_item')->where(['is_hidden' => '0'])->one()
+        ];
+    }
     
     /**
      * {@inheritDoc} 

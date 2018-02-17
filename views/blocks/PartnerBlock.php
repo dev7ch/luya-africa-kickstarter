@@ -38,7 +38,7 @@ switch ($style) {
 <article class="partner<?= $style ?>">
     <div class="row md-auto">
 <? endif; ?>
-        <div class="col-xl-4 col-lg-3 col-sm-6 col-xs-12 col-12">
+        <div class="col-xl-3 col-lg-4 col-sm-6 col-xs-12 col-12">
             <div class="row mb-3">
                 <div class="col-4 col-sm-6 col-md-5 col-6">
                     <a class="link" href="<?= $link ?>" target="_blank">

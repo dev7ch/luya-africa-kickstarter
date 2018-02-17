@@ -91,23 +91,13 @@ $config = [
                 // insert the name of each contact form into `tours_bookings` table:
             },
             'recipients' => [
-                'your@mail.com',
+                'africa@dev7.ch',
             ]
 
         ],
     ],
     'components' => [
-        /*
-         * Add your smtp connection to the mail component to send mails (which is required for secure login), you can test your
-         * mail component with the luya console command ./vendor/bin/luya health/mailer.
-         */
-        'mail' => [
-            'host' => null,
-            'username' => null,
-            'password' => null,
-            'from' => null,
-            'fromName' => null,
-        ],
+
         /*
          * The composition component handles your languages and they way your urls will look like. The composition components will
          * automatically add the language prefix which is defined in `default` to your url (the language part in the url  e.g. "yourdomain.com/en/homepage").

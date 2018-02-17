@@ -98,17 +98,7 @@ $config = [
         ],
     ],
     'components' => [
-        /*
-         * Add your smtp connection to the mail component to send mails (which is required for secure login), you can test your
-         * mail component with the luya console command ./vendor/bin/luya health/mailer.
-         */
-        'mail' => [
-            'host' => null,
-            'username' => null,
-            'password' => null,
-            'from' => null,
-            'fromName' => null,
-        ],
+
         /*
          * The composition component handles your languages and they way your urls will look like. The composition components will
          * automatically add the language prefix which is defined in `default` to your url (the language part in the url  e.g. "yourdomain.com/en/homepage").
@@ -117,8 +107,8 @@ $config = [
          * default: (array) Contains the default setup for the current language, this must match your language system configuration.
          */
         'composition' => [
-            'hidden' => false, // no languages in your url (most case for pages which are not multi lingual)
-            'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the langauge table.
+            'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
+            'default' => ['langShortCode' => 'de'], // the default language for the composition should match your default language shortCode in the langauge table.
         ],
         /*
          * If cache is enabled LUYA will cache cms blocks and speed up the system in different ways. In the prep config
