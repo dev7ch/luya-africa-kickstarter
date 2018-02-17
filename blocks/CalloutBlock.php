@@ -54,8 +54,7 @@ class CalloutBlock extends PhpBlock
     {
         return [
             'vars' => [
-                 ['var' => 'title', 'label' => 'Title', 'type' => self::TYPE_TEXTAREA],
-                 ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXT],
+                 ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXTAREA, 'options' => ['markdown' => true]],
                  ['var' => 'bgImage', 'label' => 'Background Image', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
             ],
             'placeholders' => [
