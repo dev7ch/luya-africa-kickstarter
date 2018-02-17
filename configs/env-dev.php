@@ -89,10 +89,10 @@ $config = [
                 [['phone', 'message'], 'safe'],
             ],
             'callback' => function($model) {
-                // insert the name of each contact form into `tours_bookings` table:
+                // Custom callback
             },
             'recipients' => [
-                'your@mail.com',
+                'africa@dev7.ch',
             ]
 
         ],
@@ -107,7 +107,7 @@ $config = [
          * default: (array) Contains the default setup for the current language, this must match your language system configuration.
          */
         'composition' => [
-            'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
+            'hidden' => false, // no languages in your url (most case for pages which are not multi lingual)
             'default' => ['langShortCode' => 'de'], // the default language for the composition should match your default language shortCode in the langauge table.
         ],
         /*
