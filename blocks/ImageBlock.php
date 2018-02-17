@@ -57,6 +57,12 @@ class ImageBlock extends PhpBlock
                  ['var' => 'cssClass', 'label' => 'Wrapper CSS Class', 'type' => self::TYPE_TEXT],
                  ['var' => 'imgClass', 'label' => 'Image CSS Class', 'type' => self::TYPE_TEXT],
                  ['var' => 'asBg', 'label' => 'CSS Class', 'type' => self::TYPE_CHECKBOX],
+                 ['var' => 'hideMobile', 'label' => 'Hide Image small Screen', 'type' => self::TYPE_CHECKBOX],
+                 ['var' => 'spacing', 'label' => 'Spacing', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                     'top' => 'Spacing Top',
+                     'bottom' => 'Spacing Bottom',
+                     'both' => 'Spacing Both'
+                 ])],
             ],
             'placeholders' => [
                 ['var' => 'imgText', 'label' => 'Image Text Content'],
