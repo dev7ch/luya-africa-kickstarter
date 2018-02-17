@@ -20,7 +20,7 @@ $image = $this->varValue('image') ? $this->extraValue('image')->source : null;
 $caption = $this->varValue('caption') ? $this->varValue('caption') : 'no-alt-text';
 $cssClass = $this->cfgValue('cssClass') ?  ' ' . $this->cfgValue('cssClass') : null;
 $imgClass = $this->cfgValue('imgClass') ?  ' ' . $this->cfgValue('imgClass') : null;
-$spacing = $this->cfgValue('spacing') ?  ' ' . $this->cfgValue('spacing') : null;
+$spacing = $this->cfgValue('spacing');
 $hideMobile = $this->cfgValue('hideMobile') == 1 ? ' d-none d-sm-block' : '';
 $asBg = $this->cfgValue('asBg');
 $style = $this->varValue('style') ? $this->varValue('style') : 'left';

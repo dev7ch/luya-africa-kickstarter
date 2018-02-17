@@ -97,9 +97,9 @@ class PartnerBlock extends PhpBlock
     {
         return '<h3 class="mb-0 bg-secondary p-2 rounded text-light"><b>Partner Block</b><i class="material-icons float-right">' . $this->icon() . '</i></h3><hr class="mb-2">' .
             '{% if vars.name is not empty %}' .
-            '<h1 class="mb-3">{{vars.name}}</h1>' .
+            '<h3 class="mb-3">{{vars.name}}</h3>' .
             '{% else %}'.
-            '<h1 class="mb-3">Add new business partner</h1>' .
+            '<h3 class="mb-3">Add new business partner</h3>' .
             '{% endif %}'.
             '{% if vars.logo is not empty %}' .
             '<img class="img-fluid" src="{{extras.logo.source}}">' .

@@ -15,15 +15,33 @@
 $bgImage = $this->extraValue('bgImage') ? $this->extraValue('bgImage')->source : '';
 $title = $this->varValue('title');
 $text = $this->varValue('text');
+$item = $this->placeholderValue('itemCallout') ? $this->placeholderValue('itemCallout') : null ;
 ?>
 
+
 <? if (!empty($title || $text)): ?>
-    <div class="callout-image" style="background-image: url('<?= $bgImage ?>')">
+    <div class="callout-image" style="background: url('<?= $bgImage ?>') center no-repeat; background-size: cover">
         <div class="container">
+            <? if ($item === null): ?>
             <div class="callout-content p-3">
                 <h4 class="callout-title callout-inner"><?= $title ?></h4>
                 <p class="callout-text callout-inner"><?= $text ?></p>
             </div>
+            <? else: ?>
+            <div class="row">
+                <div class="col">
+                    <div class="callout-content p-3 mb-2">
+                        <h4 class="callout-title callout-inner"><?= $title ?></h4>
+                        <p class="callout-text callout-inner"><?= $text ?></p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="callout-content p-3">
+                        <?= $item ?>
+                    </div>
+                </div>
+            </div>
+        <? endif;?>
         </div>
     </div>
 <? endif; ?>

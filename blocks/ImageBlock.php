@@ -76,7 +76,8 @@ class ImageBlock extends PhpBlock
     public function extraVars()
     {
         return [
-            'image' => BlockHelper::imageUpload($this->getVarValue('image'), false, true),
+            'image' => BlockHelper::imageUpload($this->getVarValue('image'), 'large-thumbnail', true),
+            'imageAdmin' => BlockHelper::imageUpload($this->getVarValue('image'), 'medium-thumbnail', true),
         ];
     }
 
@@ -91,20 +92,21 @@ class ImageBlock extends PhpBlock
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Image Block</h5>' .
-            '<table class="table table-bordered">' .
+        return '<h3 class="mb-0 bg-secondary p-2 rounded text-light"><b>Image Text Block</b><i class="material-icons float-right">' . $this->icon() . '</i></h3><hr class="mb-2">' .
+            '{% if vars.caption is not empty %}' .
+            '<h3 class="mb-3">{{vars.caption}}</h3>' .
+            '{% endif %}'.
             '{% if vars.image is not empty %}' .
-            '<tr><td><b>Image</b></td><td>{{vars.image}}</td></tr>' .
+            '<div class="d-block"><img alt="admin-img" src="{{extras.imageAdmin.source}}"/></div>' .
             '{% endif %}'.
             '{% if vars.caption is not empty %}' .
-            '<tr><td><b>Caption</b></td><td>{{vars.caption}}</td></tr>' .
+            '<b>Caption: </b>{{vars.caption}}</br>' .
             '{% endif %}'.
             '{% if vars.style is not empty %}' .
-            '<tr><td><b>Position</b></td><td>{{vars.style}}</td></tr>' .
+            '<b>Position: {{vars.style}}</br>' .
             '{% endif %}'.
             '{% if cfgs.cssClass is not empty %}' .
-            '<tr><td><b>CSS Class</b></td><td>{{cfgs.cssClass}}</td></tr>' .
-            '{% endif %}'.
-            '</table>';
+            '<b>CSS Class:</b>{{cfgs.cssClass}}</br>' .
+            '{% endif %}';
     }
 }

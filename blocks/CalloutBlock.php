@@ -16,7 +16,7 @@ class CalloutBlock extends PhpBlock
     /**
      * @var bool Choose whether a block can be cached trough the caching component. Be carefull with caching container blocks.
      */
-    public $cacheEnabled = true;
+    public $cacheEnabled = false;
     
     /**
      * @var int The cache lifetime for this block in seconds (3600 = 1 hour), only affects when cacheEnabled is true
@@ -58,6 +58,9 @@ class CalloutBlock extends PhpBlock
                  ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXT],
                  ['var' => 'bgImage', 'label' => 'Background Image', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
             ],
+            'placeholders' => [
+                ['var' => 'itemCallout', 'label' => 'Callout Right Content'],
+            ],
         ];
     }
     
@@ -68,6 +71,7 @@ class CalloutBlock extends PhpBlock
     {
         return [
             'bgImage' => BlockHelper::imageUpload($this->getVarValue('bgImage'), false, true),
+            'bgImageAdmin' => BlockHelper::imageUpload($this->getVarValue('bgImage'), 'medium-thumbnail', true),
         ];
     }
 
@@ -82,16 +86,14 @@ class CalloutBlock extends PhpBlock
     public function admin()
     {
         return '<h3 class="mb-0 bg-secondary p-2 rounded text-light"><b>Callout Block</b><i class="material-icons float-right">' . $this->icon() . '</i></h3><hr class="mb-2">' .
-            '<table class="table table-bordered">' .
             '{% if vars.title is not empty %}' .
-            '<tr><td><b>Title</b></td><td>{{vars.title}}</td></tr>' .
+            '<h3 class="mb-3">{{vars.title}}</h3>' .
             '{% endif %}'.
             '{% if vars.text is not empty %}' .
-            '<tr><td><b>Text</b></td><td>{{vars.text}}</td></tr>' .
+            '<b>Text: </b>{{vars.text}} <br/>'.
             '{% endif %}'.
             '{% if vars.bgImage is not empty %}' .
-            '<tr><td><b>Background Image</b></td><td>{{vars.bgImage}}</td></tr>' .
-            '{% endif %}'.
-            '</table>';
+            '<img class="d-block" src="{{extras.bgImage.source}}" alt="Callout image">' .
+            '{% endif %}';
     }
 }
