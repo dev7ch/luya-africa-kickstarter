@@ -16,20 +16,25 @@
 .intro-slider {
     visibility: hidden;
     position: absolute;
-    width: 320px;
-    min-height: 420px;
+    width: 360px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 320px;
     max-width: 100%;
     left: 50%;
-    top: 30%;
+    top: 220px;
     transform: translate(-50%, -50%);
 
     @include screen-min(sm) {
+        top: 40%;
         width: 480px;
+        min-height: 380px;
     }
 
     @include screen-min(md) {
-        top: 45%;
+        top: 50%;
         width: 640px;
+        min-height: 420px;
     }
 }
 

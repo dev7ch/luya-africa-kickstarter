@@ -9,7 +9,7 @@
     @include dropshadow();
 
     @include screen-min(sm) {
-        height: 380px;
+        height: 370px;
 
     }
 }
@@ -30,7 +30,7 @@
     background-size: cover;
 
     @include screen-min(sm) {
-        min-height: 380px;
+        min-height: 370px;
     }
 }
 
@@ -64,11 +64,11 @@
     position: absolute;
     top: calc(50% - 20px);
     z-index: -1;
-    width: calc(100% + 60px);
-    left: -30px;
+    width: calc(100% + 20px);
+    left: -10px;
 
     @include screen-min(sm) {
-        width: calc(100% + 80px);
-        left: -40px;
+        width: calc(100% + 28px);
+        left: -14px;
     }
 }
