@@ -14,7 +14,7 @@
 
 $bgImage = $this->extraValue('bgImage') ? $this->extraValue('bgImage')->source : '';
 $title = $this->varValue('title');
-$text = $this->varValue('text');
+$text = $this->extraValue('text');
 $item = $this->placeholderValue('itemCallout') ? $this->placeholderValue('itemCallout') : null ;
 ?>
 

@@ -54,7 +54,7 @@ class CalloutBlock extends PhpBlock
     {
         return [
             'vars' => [
-                 ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXTAREA, 'options' => ['markdown' => true]],
+                 ['var' => 'text', 'label' => 'Text', 'type' => self::TYPE_TEXTAREA],
                  ['var' => 'bgImage', 'label' => 'Background Image', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
             ],
             'placeholders' => [
@@ -69,6 +69,7 @@ class CalloutBlock extends PhpBlock
     public function extraVars()
     {
         return [
+            'text' => BlockHelper::markdown($this->getVarValue('text')),
             'bgImage' => BlockHelper::imageUpload($this->getVarValue('bgImage'), false, true),
             'bgImageAdmin' => BlockHelper::imageUpload($this->getVarValue('bgImage'), 'medium-thumbnail', true),
         ];
