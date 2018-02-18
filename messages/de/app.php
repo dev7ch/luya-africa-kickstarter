@@ -3,7 +3,7 @@
 return [
     'view' => 'Mehr erfahren',
     'view_profile' => 'Profil anzeigen',
-    'view_tour' => 'Tour Info´s anzeigen',
+    'view_tour' => 'Tour ansehen',
     'send' => 'Senden',
     'send_message' => 'Nachricht senden',
     'send_booking' => 'Buchungsanfrage senden',

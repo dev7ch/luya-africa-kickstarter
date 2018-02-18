@@ -10,9 +10,28 @@
             background-color: lighten($info, 20);
             @include hover(card);
 
+            @include screen-min(lg) {
+                max-width: calc(50% - 30px);
+            }
+
             .card-footer {
                 background-color:lighten($info, 10);
                 border-top: none;
+                a[class*="btn-"] {
+                    display: block;
+                    margin-bottom: 10px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
+                @include screen-min(md) {
+                    a[class*="btn-"] {
+                        margin-bottom: 0;
+                        display: inline-block;
+                    }
+                }
             }
         }
     }
