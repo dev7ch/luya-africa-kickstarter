@@ -36,7 +36,7 @@ class IntroBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Intro with slider';
+        return 'Intro and Slider';
     }
     
     /**
@@ -77,7 +77,7 @@ class IntroBlock extends PhpBlock
         foreach ($data as $slide) {
             $slides[] = [
                 'title' => isset($slide['title']) ? $slide['title'] : '',
-                'image' => isset($slide['image']) ? BlockHelper::imageUpload($slide['image'], 'large-thumbnail', true) : null,
+                'image' => isset($slide['image']) ? BlockHelper::imageUpload($slide['image'], 'slider-filter', true) : null,
                 'alt' => isset($slide['alt']) ? $slide['alt'] : 'no-alt-text',
                 'text' => isset($slide['text']) ? BlockHelper::markdown($slide['text']) : '',
                 'link' => isset($slide['link']) ? BlockHelper::linkObject($slide['link']) : '',

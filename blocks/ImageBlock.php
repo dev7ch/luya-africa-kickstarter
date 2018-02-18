@@ -26,7 +26,7 @@ class ImageBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Image Block';
+        return 'Image and Text';
     }
 
     public $isContainer = false;
@@ -36,7 +36,7 @@ class ImageBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'extension'; // see the list of icons on: https://design.google.com/icons/
+        return 'burst_mode'; // see the list of icons on: https://design.google.com/icons/
     }
  
     /**

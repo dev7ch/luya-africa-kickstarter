@@ -135,7 +135,7 @@ if (Yii::$app->menu->current->getPropertyValue('bg')) {
 </html>
 <? if(Yii::$app->menu->current == Yii::$app->getHomeUrl() || Yii::$app->getHomeUrl() . '/de') {
     echo $this->registerJs('                
-            sr.reveal(\'.nav-lang\', {origin:\'top\', reset: true, move:2, scale:.5, delay:300, useDelay: \'once\', duration:300, distance: \'120px\', mobile: false});',
+            sr.reveal(\'.nav-lang\', {origin:\'top\', reset: false, move:2, scale:.5, delay:300, useDelay: \'once\', duration:300, distance: \'120px\', mobile: false});',
         \yii\web\View::POS_LOAD);
 };?>
 <?php $this->endPage() ?>

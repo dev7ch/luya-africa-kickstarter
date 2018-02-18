@@ -48,7 +48,7 @@ class AccordionBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Accordion Block';
+        return 'Accordion';
     }
     
     /**

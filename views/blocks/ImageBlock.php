@@ -45,11 +45,11 @@ switch ($spacing) {
     <? if ($imgText != null): ?>
     <div class="row<?= $spacing ?>">
         <? if ($style === 'left'): ?>
-            <div class="col-12 col-sm-8 col-md-6 col-lg-7 col-xl-8">
+            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
                 <?= $imgText ?>
             </div>
         <? endif; ?>
-        <div class="col-12 col-sm-4 col-md-6 col-lg-5 col-xl-4">
+        <div class="col-12 col-md-6 col-lg-5 col-xl-4 d-md-block<?= $style === 'left' ? ' d-none' : '' ?>">
     <? endif; ?>
     <figure class="image-wrapper<?= $cssClass ?><?= $hideMobile ?>">
         <img class="image img-fluid<?= $imgClass ?>" src="<?= $image ?>" alt="<?= $caption ?>"/>
@@ -62,7 +62,7 @@ switch ($spacing) {
     <? if ($imgText != null): ?>
         </div>
         <? if ($style === 'right'): ?>
-            <div class="col-12 col-sm-8 col-md-6 col-lg-7 col-xl-8">
+            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
                 <?= $imgText ?>
             </div>
         <? endif; ?>

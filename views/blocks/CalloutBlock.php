@@ -23,13 +23,13 @@ $item = $this->placeholderValue('itemCallout') ? $this->placeholderValue('itemCa
     <div class="callout-image" style="background: url('<?= $bgImage ?>') center no-repeat; background-size: cover">
         <div class="container">
             <? if ($item === null): ?>
-            <div class="callout-content p-3">
+            <div class="<?= $text ? 'callout-content p-3' : 'callout-empty' ?>">
                 <p class="callout-text callout-inner"><?= $text ?></p>
             </div>
             <? else: ?>
             <div class="row">
                 <div class="col">
-                    <div class="callout-content p-3 mb-2">
+                    <div class="<?= $text ? 'callout-content p-3 mb-2' : 'callout-empty' ?>">
                         <p class="callout-text callout-inner"><?= $text ?></p>
                     </div>
                 </div>

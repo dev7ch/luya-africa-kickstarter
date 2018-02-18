@@ -1,5 +1,23 @@
-.main{
+.main {
     display: block;
     position: relative;
     z-index: 1;
+
+    > .container ul {
+        list-style: none;
+        padding-left: 15px;
+
+        li {
+            padding-left: 30px;
+            position: relative;
+            line-height: 28px;
+        }
+        li:before {
+            content: '❂';
+            position: absolute;
+            color: $info;
+            left: 0;
+            width: 1.3em;
+        }
+    }
 }

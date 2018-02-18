@@ -36,7 +36,7 @@ class PartnerBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Partner Block';
+        return 'Partner Logos';
     }
     
     /**

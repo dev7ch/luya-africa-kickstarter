@@ -9,24 +9,24 @@ use luya\admin\base\Filter;
  *
  * File has been created with `block/create` command. 
  */
-class CarouselFilter extends Filter
+class SliderFilter extends Filter
 {
     public static function identifier()
     {
-        return 'carousel-filter';
+        return 'slider-filter';
     }
 
     public function name()
     {
-        return 'Carousel';
+        return 'Slider';
     }
 
     public function chain()
     {
         return [
             [self::EFFECT_THUMBNAIL, [
-                'width' => '480',
-                'height' => '240'
+                'width' => '640',
+                'height' => '480'
             ]],
         ];
     }
