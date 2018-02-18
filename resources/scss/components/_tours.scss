@@ -10,7 +10,7 @@
             background-color: lighten($info, 20);
             @include hover(card);
 
-            @include screen-min(lg) {
+            @include screen-min(md) {
                 max-width: calc(50% - 30px);
             }
 
