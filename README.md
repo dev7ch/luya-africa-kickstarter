@@ -12,7 +12,7 @@ This is a free skeleton for a reday to use travelangency website with integrated
 
 `composer create-project dev7ch/luya-africa-kickstarter/`
 
-Change into Project directory and run  
+Change into project directory and run  
 
 `cp configs/env.php.dist configs/env.php` 
 
