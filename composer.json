@@ -1,6 +1,6 @@
 {
-    "name": "luyadev/luya-kickstarter",
-    "description": "The kickstarter project for a new LUYA application.",
+    "name": "dev7ch/luya-africa-kickstarter",
+    "description": "Website kickstarter project for travel agency website.",
     "type": "luya-kickstarter",
     "license":"MIT",
     "require": {
