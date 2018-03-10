@@ -10,7 +10,7 @@ This is a free skeleton for a reday to use travelangency website with integrated
 
 ### Install
 
-`composer create-project dev7ch/luya-africa-kickstarter/`
+`composer create-project dev7ch/luya-africa-kickstarter`
 
 Change into project directory and run  
 
