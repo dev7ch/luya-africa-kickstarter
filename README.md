@@ -14,7 +14,8 @@ This is a free skeleton for a reday to use travelangency website with integrated
 
 Change into Project directory and run  
 
-`cp configs/env.php.dist configs/env.php`  
+`cp configs/env.php.dist configs/env.php` 
+
 `cp configs/env-local-db.php.dist configs/env-local-db.php`  
 
 Create a new MySQL DB and open the `configs/env-local-db.php` in your favorite editor to add de credentials, e.g. Atom from cmd.
