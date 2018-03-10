@@ -24,12 +24,12 @@ Create a new MySQL DB and open the `configs/env-local-db.php` in your favorite e
 
 Run the LUYA setup
 
-`./luya migrate`  confirm migration
-`./luya import`  import basic settings
+`./luya migrate`  confirm migration  
+`./luya import`  import basic settings  
 
 You could check with `./luya health` if all is set up fine
 
-Create a new admin user
+Create a new admin user  
 
 `./luya admin/setup`
 
