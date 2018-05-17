@@ -7,7 +7,7 @@ use luya\admin\base\Filter;
 /**
  * Logo Filter.
  *
- * File has been created with `block/create` command. 
+ * File has been created with `block/create` command.
  */
 class LogoFilter extends Filter
 {
@@ -26,7 +26,7 @@ class LogoFilter extends Filter
         return [
             [self::EFFECT_THUMBNAIL, [
                 'width' => '240',
-                'height' => '160',
+                'height' => null
             ]],
         ];
     }
