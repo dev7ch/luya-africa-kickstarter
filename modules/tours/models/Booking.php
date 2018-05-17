@@ -7,8 +7,8 @@ use luya\admin\ngrest\base\NgRestModel;
 
 /**
  * Booking.
- * 
- * File has been created with `crud/create` command. 
+ *
+ * File has been created with `crud/create` command.
  *
  * @property integer $id
  * @property string $first_name
@@ -88,7 +88,7 @@ class Booking extends NgRestModel
             [['first_name', 'last_name', 'email'], 'required'],
             [['message', 'ip', 'date', 'booked_tour'], 'safe'],
             [['is_confirmed'], 'integer'],
-            [['first_name', 'first_last', 'phone', 'email'], 'string', 'max' => 255],
+            [['first_name', 'last_name', 'phone', 'email'], 'string', 'max' => 255],
         ];
     }
 
