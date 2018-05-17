@@ -1,8 +1,8 @@
 <?php
 /**
- * View file for block: PartnerBlock 
+ * View file for block: PartnerBlock
  *
- * File has been created with `block/create` command. 
+ * File has been created with `block/create` command.
  *
  * @param $this->cfgValue('size');
  * @param $this->cfgValue('style');
@@ -38,16 +38,20 @@ switch ($style) {
 <article class="partner<?= $style ?>">
     <div class="row md-auto">
 <? endif; ?>
-        <div class="col-xl-3 col-lg-4 col-sm-6 col-xs-12 col-12">
+        <div class="col-12">
             <div class="row mb-3">
-                <div class="col-4 col-sm-6 col-md-5 col-6">
+                <div class="col-sm-6 col-md-5 col-6">
                     <a class="link" href="<?= $link ?>" target="_blank">
                         <img class="img-fluid" src="<?= $logo ?>" alt="<?= $name ?>">
                     </a>
                 </div>
-                <div class="col-sm-6 col-md-7 col-6">
-                    <h5 class="partner-title mb-0"><?= $name ?></h5>
-                    <p class="small"><a class="link" href="<?= $link ?>" target="_blank"><?= $link ?></a></p>
+                <div class="col-sm-6 col-md-7 col-6 position-relative align-items-center d-flex">
+                    <div class="row justify-content-center align-self-center">
+                        <div class="partner-info-wrapper">
+                            <h5 class="partner-title mb-0"><?= $name ?></h5> <br/>
+                            <p class="small"><a class="link" href="<?= $link ?>" target="_blank"><?= $link ?></a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
