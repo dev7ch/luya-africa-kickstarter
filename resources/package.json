@@ -24,8 +24,10 @@
   "homepage": "https://github.com/dev7ch/luya-africa-kickstarter#readme",
   "dependencies": {
     "flag-icon-css": "^2.9.0",
+    "scrollreveal": "^3.3.6"
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
-    "scrollreveal": "^3.3.6",
     "zephir-gulp-workflow": "^2.0.1"
   }
 }

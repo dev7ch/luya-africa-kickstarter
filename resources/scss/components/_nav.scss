@@ -2,18 +2,21 @@
 
 
 .nav-lang {
+    background-color: $white;
     position: absolute;
-    right:5px;
+    right:15px;
     border: 1px solid $mainnav-lang-active;
-    margin-right: 20px;
     top: $mainnav-height;
     border-radius: $border-radius;
     overflow: hidden;
     visibility: visible;
 
     @include screen-min(md) {
-        visibility: hidden;
-        top: 3px;
+        top: calc(#{$mainnav-height} - 10px);
+        right:20px;
+    }
+    .collapsing & {
+        display: none;
     }
 }
 

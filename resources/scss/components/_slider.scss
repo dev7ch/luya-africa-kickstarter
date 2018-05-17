@@ -52,7 +52,7 @@
 
 .slider-text {
     display: none;
-
+    margin-bottom: 10px;
     @include screen-min(sm) {
         display: block;
     }
