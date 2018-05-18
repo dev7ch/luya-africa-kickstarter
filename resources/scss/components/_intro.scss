@@ -7,11 +7,15 @@
 .intro-image {
     background-position: center;
     background-size: cover;
-    &-slider {
 
+    &-slider {
         background-position: center;
         background-size: cover;
-        min-height: 420px;
+        min-height: 520px;
+
+        @include screen-min(md) {
+            margin-bottom: 200px;
+        }
     }
 }
 
@@ -24,17 +28,17 @@
     min-height: 320px;
     max-width: 100%;
     left: 50%;
-    top: 220px;
+    top: 63%;
     transform: translate(-50%, -50%);
 
     @include screen-min(sm) {
-        top: 40%;
+        top: 65%;
         width: 480px;
         min-height: 380px;
     }
 
     @include screen-min(md) {
-        top: 50%;
+        top:63.5%;
         width: 640px;
         min-height: 420px;
     }

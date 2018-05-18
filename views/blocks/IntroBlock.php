@@ -1,8 +1,8 @@
 <?php
 /**
- * View file for block: IntroBlock 
+ * View file for block: IntroBlock
  *
- * File has been created with `block/create` command. 
+ * File has been created with `block/create` command.
  *
  * @param $this->extraValue('bgImage');
  * @param $this->varValue('bgImage');
@@ -26,7 +26,7 @@ $slides = $this->extraValue('slides') ? $this->extraValue('slides') : false ;
                         <div  class="slider-image" <?= $slide['image'] != null ? ' style="background-image: url(\'' . str_replace(' ', '/',($slide['image']->source)) . '\')"' : ''; ?>>
                             <article class="slider-content" itemscope itemtype="http://schema.org/Article">
                                 <h3 itemprop="articleHeadline" class="slider-title"><?= $slide['title'] ?></h3>
-                                <div itemprop="articleBody" class="slider-text m-0"><?= $slide['text'] ?></div>
+                                <div itemprop="articleBody" class="slider-text mb-2"><?= $slide['text'] ?></div>
                                 <? if ($slide['link'] != null): ?>
                                     <a itemprop="url" class="btn btn-primary slider-link text-light d-inline-block" href="<?= $slide['link'] ?>" style="color: inherit; text-decoration: inherit"><?= Yii::t('app', 'view') ?></a>
                                 <? endif; ?>
