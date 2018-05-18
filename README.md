@@ -42,7 +42,9 @@ Change into the `resources/` directory and install via npm
 
 `npm install`
 
-Gulp CLI should be installed globally
+> gulp-cli should be installed globally
 
 Run `gulp` for compiling and `gulp watch` for instant recompile on changes
+
+Run e.g, `gulp --env prod` to compile all assets for the prod server stage
 
