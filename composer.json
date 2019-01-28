@@ -15,7 +15,8 @@
         "yiisoft/yii2-gii" : "~2.0.0",
         "yiisoft/yii2-debug" : "~2.0.0",
         "luyadev/luya-testsuite" : "~1.0.0",
-        "luyadev/luya-deployer": "~1.0.0"
+        "luyadev/luya-deployer": "~1.0.0",
+        "unglue/client": "^1.2"
     },
     "scripts": {
         "post-create-project-cmd": [
