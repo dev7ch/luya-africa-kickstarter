@@ -15,7 +15,7 @@ class ResourcesAsset extends \luya\web\Asset
     ];
 
     public $js = [
-        '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
+        '//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js',
         YII_ENV . '/js/main.min.js'
     ];
     
