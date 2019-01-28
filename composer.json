@@ -8,7 +8,7 @@
         "luyadev/luya-module-admin" : "~1.0.0",
         "luyadev/luya-module-cms" : "~1.0.0",
         "luyadev/luya-generic" : "~1.0.0",
-        "twbs/bootstrap": "4.0.0",
+        "twbs/bootstrap": "4.2.1",
         "luyadev/luya-module-contactform": "~1.0.0"
     },
     "require-dev": {
