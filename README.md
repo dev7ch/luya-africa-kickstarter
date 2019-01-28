@@ -5,7 +5,6 @@ This is a free skeleton for a reday to use travelangency website with integrated
 ### Requirements
 
 - composer
-- npm
 - mysql and php
 
 ### Install
@@ -28,23 +27,19 @@ Run the LUYA setup
 
 `./luya import`  import basic settings  
 
-You could check with `./luya health` if all is set up fine
+
+### Backend
 
 Create a new admin user  
 
 `./luya admin/setup`
 
-
 For more see the install instructions at https://luya.io/guide/install
 
+### Frontend
 
-Change into the `resources/` directory and install via npm  
+Run `./vendor/bin/unglue compile` to compile all scss and js files.
 
-`npm install`
+For more see https://www.unglue.io/
 
-> gulp-cli should be installed globally
-
-Run `gulp` for compiling and `gulp watch` for instant recompile on changes
-
-Run e.g, `gulp --env prod` to compile all assets for the prod server stage
-
+For development use 

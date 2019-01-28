@@ -1,0 +1,14 @@
+{
+    "css": [
+
+    "../../scss/main.scss"
+
+    ],
+
+    "js": [
+    "../../js/libs/scrollreveal.min.js",
+    "../../js/libs/siema.min.js",
+    "../../js/main.js"
+
+    ]
+}
