@@ -1,6 +1,6 @@
 # Website Kickstarter with LUYA CMS integration
 
-This is a free skeleton for a reday to use travelangency website with integrated booking form and themem module wich let you adjust sitename and logo from the admin UI.
+This is a free and a ready-to-use skeleton for a travel agency website with integrated booking form and template module which let you adjust site name and logo from the admin UI.
 
 ### Requirements
 
@@ -17,11 +17,11 @@ Change into project directory and run
 
 `cp configs/env-local-db.php.dist configs/env-local-db.php`  
 
-Create a new MySQL DB and open the `configs/env-local-db.php` in your favorite editor to add de credentials, e.g. Atom from cmd.
+- Create a new MySQL DB 
 
-`atom configs/env-local-db.php`  
+- Open the `configs/env-local-db.php` in your favorite editor to add de credentials.
 
-Run the LUYA setup
+- Migrate and install LUYA
 
 `./luya migrate`  confirm migration  
 
@@ -40,6 +40,6 @@ For more see the install instructions at https://luya.io/guide/install
 
 Run `./vendor/bin/unglue compile` to compile all scss and js files.
 
-For more see https://www.unglue.io/
+For more see https://www.unglue.io/  
 
-For development use 
+For development use `./vendor/bin/unglue watch`
